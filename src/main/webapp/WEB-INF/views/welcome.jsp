@@ -13,5 +13,10 @@
 <body>
 
 ${hello}
+<p>Welcome to PetSitter
+    <br><a href="createAccount">Create An Account</a>
+<br>
+<br>Login</p>
+
 </body>
 </html>
