@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.grandcircus.spring.models.ParentPetsEntity" table="ParentPets" schema="PETSITTER">
+        <id name="iD" column="Id">
+            <!-- <generator class="assigned"></generator> -->
+            <generator class="native" />
+        </id>
+        <property name="userID">
+            <column name="UserID" sql-type="varchar(30)" length="30"/>
+        </property>
+        <property name="petName">
+            <column name="PetName" sql-type="varchar(30)" length="30"/>
+        </property>
+        <property name="dog">
+            <column name="Dog" sql-type="tinyint(1)"/>
+        </property>
+        <property name="cat">
+            <column name="Cat" sql-type="tinyint(4)"/>
+        </property>
+        <property name="breed">
+            <column name="Breed" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="inHome">
+            <column name="InHome" sql-type="tinyint(1)"/>
+        </property>
+        <property name="temper">
+            <column name="Temper" sql-type="varchar(10)" length="10"/>
+        </property>
+        <property name="feed">
+            <column name="Feed" sql-type="tinyint(1)"/>
+        </property>
+        <property name="walk">
+            <column name="Walk" sql-type="tinyint(1)"/>
+        </property>
+        <property name="play">
+            <column name="Play" sql-type="tinyint(4)"/>
+        </property>
+        <property name="visit">
+            <column name="Visit" sql-type="tinyint(1)"/>
+        </property>
+    </class>
+</hibernate-mapping>

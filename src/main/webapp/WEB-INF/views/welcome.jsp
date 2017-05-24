@@ -13,5 +13,10 @@
 <body>
 <!--ref to variable name/modelName in HomeController. will bring back "Hello World", our string-->
 ${hello}
+<p>Welcome to PetSitter
+    <br><a href="createAccount">Create An Account</a>
+<br>
+<br>Login</p>
+
 </body>
 </html>

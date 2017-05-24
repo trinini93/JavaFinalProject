@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.grandcircus.spring.models.UserProfileEntity" table="UserProfile" schema="PETSITTER">
+        <id name="userId" column="userId">
+            <!-- <generator class="assigned"></generator> -->
+            <generator class="native" />
+        </id>
+
+        <!--<id name="userId">-->
+            <!--<column name="userID" sql-type="int(11)"/>-->
+        <!--</id>-->
+        <property name="email">
+            <column name="email" sql-type="varchar(40)" length="40"/>
+        </property>
+        <property name="firstName">
+            <column name="firstName" sql-type="varchar(30)" length="30"/>
+        </property>
+        <property name="lastName">
+            <column name="lastName" sql-type="varchar(40)" length="40"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="apt">
+            <column name="apt" sql-type="varchar(15)" length="15" not-null="true"/>
+        </property>
+        <property name="city">
+            <column name="city" sql-type="varchar(25)" length="25"/>
+        </property>
+        <property name="state">
+            <column name="state" sql-type="varchar(40)" length="40"/>
+        </property>
+        <property name="zip">
+            <column name="zip" sql-type="int(5)"/>
+        </property>
+        <property name="password">
+            <column name="password" sql-type="varchar(6)" length="6"/>
+        </property>
+        <property name="repeatPassword">
+            <column name="repeatPassword" sql-type="varchar(6)" length="6"/>
+        </property>
+        <property name="parent">
+            <column name="parent" sql-type="tinyint(1)"/>
+        </property>
+        <property name="sitter">
+            <column name="sitter" sql-type="tinyint(4)"/>
+        </property>
+    </class>
+</hibernate-mapping>

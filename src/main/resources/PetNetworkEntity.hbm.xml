@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.grandcircus.spring.models.PetNetworkEntity" table="PetNetwork" schema="PETSITTER">
+        <id name="userIDnum" column="userIDnum">
+            <!-- <generator class="assigned"></generator> -->
+            <generator class="native" />
+        </id>
+        <!--<property name="userIDnum">-->
+            <!--<column name="UserIDnum" sql-type="int(11)"/>-->
+        <!--</property>-->
+        <property name="petName">
+            <column name="Pet_Name" sql-type="varchar(30)" length="30"/>
+        </property>
+        <property name="breedis">
+            <column name="Breedis" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="parentName">
+            <column name="ParentName" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="parentAddr">
+            <column name="ParentAddr" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="parentZip">
+            <column name="ParentZip" sql-type="varchar(5)" length="5"/>
+        </property>
+        <property name="parentEmail">
+            <column name="ParentEmail" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="userIdent">
+            <column name="UserIdent" sql-type="int(11)"/>
+        </property>
+        <property name="sitterName">
+            <column name="SitterName" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="sitterEmail">
+            <column name="SitterEmail" sql-type="varchar(45)" length="45"/>
+        </property>
+    </class>
+</hibernate-mapping>
