@@ -49,6 +49,7 @@ public class HomeController {
         return new ModelAndView("welcome", "hello", "Hello, World!");
 
     }
+
     //request Mapping for parent profile/pet registration
     @RequestMapping("/petProfile")
     public ModelAndView parentProfile() {
@@ -64,6 +65,7 @@ public class HomeController {
         return new ModelAndView("sitterProfile", " ", " ");
 
     }
+
     @RequestMapping("/dogBreedList")
 
     public ModelAndView dogBreed(Model model, @RequestParam("pettype") String animalType) {
@@ -130,13 +132,13 @@ public class HomeController {
 
                 JSONArray catBreedArray = json2.getJSONObject("petfinder").getJSONObject("breeds").getJSONArray("breed");
 
-                for (int i = 0; i< catBreedArray.length(); i++) {
+                for (int i = 0; i < catBreedArray.length(); i++) {
                     breeds.add(catBreedArray.getJSONObject(i).get("$t").toString());
                     //result += catBreedArray.getJSONObject(i).get("$t") ;
 
 
                 }
-                model.addAttribute("breeds",breeds);
+                model.addAttribute("breeds", breeds);
 
             }
         } catch (ClientProtocolException e) {
@@ -194,11 +196,11 @@ public class HomeController {
 
             JSONArray catBreedArray = json2.getJSONObject("petfinder").getJSONObject("breeds").getJSONArray("breed");
 
-            for (int i = 0; i< catBreedArray.length(); i++) {
+            for (int i = 0; i < catBreedArray.length(); i++) {
                 result2 += catBreedArray.getJSONObject(i).get("$t") + "<br>";
 
             }
-            model.addAttribute("catBreeds",result2);
+            model.addAttribute("catBreeds", result2);
 
         } catch (ClientProtocolException e) {
             e.printStackTrace();
@@ -233,15 +235,30 @@ public class HomeController {
         return hashText;
     }
 
-    @RequestMapping("/success")
+    //success page for when parent's pet profile is added.
+    @RequestMapping("/petProfileSuccess")
     public ModelAndView addedSuccess(@RequestParam("petName") String petName,
                                      @RequestParam("testBreeds") String testBreeds,
                                      @RequestParam("medtype") String medtype,
                                      @RequestParam("petwatch") String petwatch,
                                      @RequestParam("stuff") String stuff) {
 
-        return new ModelAndView("success", "stuff2", petName +" "+ testBreeds + " " + medtype + petwatch + stuff
+        return new ModelAndView("petProfileSuccess", "stuff2", petName + " " + testBreeds + " " + medtype + petwatch + stuff
         );
+    }
+
+    //success page for when sitter's information is added.
+    @RequestMapping("/sitterProfileSuccess")
+    public ModelAndView addedSuccess2(@RequestParam("sdog") String petSize,
+                                      @RequestParam("sdog1") String location,
+                                      @RequestParam("choice1") String otherPets,
+                                      @RequestParam("choice2") String myPet,
+                                      @RequestParam("choice3") String petTemper,
+                                      @RequestParam("choice4") String doThese,
+                                      @RequestParam("trav1") String travDist,
+                                      @RequestParam("here") String experience) {
+
+        return new ModelAndView("sitterProfileSuccess", "stuff3", petSize + " " + location + " " + otherPets + myPet + petTemper + doThese + travDist + experience);
     }
 
 
@@ -255,18 +272,18 @@ public class HomeController {
 
 
     @RequestMapping(value = "/finishAccount", method = RequestMethod.GET)
-    public ModelAndView addCreateAccount(@RequestParam("email" )String email,
-                                         @RequestParam("firstName")String firstName,
-                                         @RequestParam("lastName")String lastName,
-                                         @RequestParam("address")String address,
-                                         @RequestParam("apt")String apt,
-                                         @RequestParam("city")String city,
-                                         @RequestParam("state")String state,
-                                         @RequestParam("zip")int zip,
-                                         @RequestParam("password")String password,
-                                         @RequestParam("repeatPassword")String repeatPassword,
-                                         @RequestParam("parent")byte parent,
-                                         @RequestParam("sitter")byte sitter,
+    public ModelAndView addCreateAccount(@RequestParam("email") String email,
+                                         @RequestParam("firstName") String firstName,
+                                         @RequestParam("lastName") String lastName,
+                                         @RequestParam("address") String address,
+                                         @RequestParam("apt") String apt,
+                                         @RequestParam("city") String city,
+                                         @RequestParam("state") String state,
+                                         @RequestParam("zip") int zip,
+                                         @RequestParam("password") String password,
+                                         @RequestParam("repeatPassword") String repeatPassword,
+                                         @RequestParam("parent") byte parent,
+                                         @RequestParam("sitter") byte sitter,
                                          Model model) {
         UserProfileEntity user = new UserProfileEntity();
         user.setEmail(email);
@@ -301,24 +318,23 @@ public class HomeController {
         Session session = factory.openSession();
         Transaction tx = null;
         Integer UserID = null;
-        try{
+        try {
             tx = session.beginTransaction();
             session.save(user);
             tx.commit();
-        }catch (HibernateException e) {
-            if (tx!=null) tx.rollback();
+        } catch (HibernateException e) {
+            if (tx != null) tx.rollback();
             e.printStackTrace();
-        }finally {
+        } finally {
             session.close();
         }
-        String info =  firstName + " " + lastName;
+        String info = firstName + " " + lastName;
         return new ModelAndView("finishAccount", "addUser", info);
     }
 
 
-
     @RequestMapping("listUserProfile")
-    public ModelAndView listUserProfile(){
+    public ModelAndView listUserProfile() {
 
         org.hibernate.cfg.Configuration cfg = new org.hibernate.cfg.Configuration().configure("hibernate.cfg.xml");
 
@@ -330,7 +346,7 @@ public class HomeController {
 
         Criteria c = selectUserProfile.createCriteria(UserProfileEntity.class);
 
-        ArrayList<UserProfileEntity>userList = (ArrayList<UserProfileEntity>)c.list();
+        ArrayList<UserProfileEntity> userList = (ArrayList<UserProfileEntity>) c.list();
         return new ModelAndView("userList", "cList", userList);
     }
 

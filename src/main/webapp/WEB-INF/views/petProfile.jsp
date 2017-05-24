@@ -26,7 +26,7 @@ Please fill out the form below to register your pet  with Pet Sitters.
 <input type="submit"> <br>
 </form>
 <%--Step 2: Pet's name (text form)--%>
-    <form action = "/success" method ="post">
+    <form action = "/petProfileSuccess" method ="post">
     My pet's name is:<br>
     <input type="text" name="petName"><br>
 
