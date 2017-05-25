@@ -145,7 +145,7 @@ ${hello}
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
 </script>
 
-<a href=""
+<a href="calendar">Schedule an event</a>
 
 </body>
 </html>
