@@ -55,7 +55,7 @@ ${hello}
             clientId: CLIENT_ID,
             scope: SCOPES
         }).then(function () {
-            // Listen for sign-in state changes.
+            // Listen for signin state changes.
             gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
             // Handle the initial sign-in state.
@@ -66,7 +66,7 @@ ${hello}
     }
 
     /**
-     *  Called when the signed in status changes, to update the UI
+     *  Called when the sned in status changes, to update the UI
      *  appropriately. After a sign-in, the API is called.
      */
     function updateSigninStatus(isSignedIn) {
@@ -74,7 +74,6 @@ ${hello}
             authorizeButton.style.display = 'none';
             signoutButton.style.display = 'block';
             console.log(gapi.auth2.getAuthInstance().currentUser.get().getId());
-            listUpcomingEvents();
         } else {
             authorizeButton.style.display = 'block';
             signoutButton.style.display = 'none';
@@ -145,6 +144,8 @@ ${hello}
         onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
 </script>
+
+<a href=""
 
 </body>
 </html>
