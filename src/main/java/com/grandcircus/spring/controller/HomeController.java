@@ -1,6 +1,6 @@
 package com.grandcircus.spring.controller;
 
-
+import com.grandcircus.spring.models.SittersEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -26,12 +26,7 @@ import java.security.NoSuchAlgorithmException;
 import com.grandcircus.spring.models.UserProfileEntity;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 
@@ -47,16 +42,13 @@ public class HomeController {
     public ModelAndView calendar() {
 
         return new ModelAndView("calendar", "hello", "Hello, World!");
-
     }
-
     @RequestMapping("/")
     public ModelAndView welcomePage() {
 
         return new ModelAndView("welcome", "hello", "Hello, World!");
 
     }
-
     //request Mapping for parent profile/pet registration
     @RequestMapping("/petProfile")
     public ModelAndView parentProfile() {
@@ -254,25 +246,56 @@ public class HomeController {
         );
     }
 
-    //success page for when sitter's information is added.
     @RequestMapping("/sitterProfileSuccess")
-    public ModelAndView addedSuccess2(@RequestParam("sdog") String petSize,
-                                      @RequestParam("sdog1") String location,
-                                      @RequestParam("choice1") String otherPets,
-                                      @RequestParam("choice2") String myPet,
-                                      @RequestParam("choice3") String petTemper,
-                                      @RequestParam("choice4") String doThese,
-                                      @RequestParam("trav1") String travDist,
-                                      @RequestParam("here") String experience) {
+    public ModelAndView testSitterProfilePage(
+                                              @RequestParam("petSize") String petSize,
+                                              @RequestParam("myHome") byte myHome,
+                                              @RequestParam("yourHome") byte yourHome,
+                                              @RequestParam("temper") String temper,
+                                              @RequestParam("activities") String activities,
+                                              @RequestParam("trav") String trav,
+                                              @RequestParam ("experience") String experience, Model model) {
+        SittersEntity sitter = new SittersEntity();
 
-        return new ModelAndView("sitterProfileSuccess", "stuff3", petSize + " " + location + " " + otherPets + myPet + petTemper + doThese + travDist + experience);
+        sitter.setPetSize(petSize);
+        sitter.setMyHome(myHome);
+        sitter.setYourHome(yourHome);
+        sitter.setTemper(temper);
+        sitter.setActivities(activities);
+        sitter.setTrav(trav);
+        sitter.setExperience(experience);
+
+        model.addAttribute("petSize", sitter.getPetSize());
+        model.addAttribute("myHome", sitter.getMyHome());
+        model.addAttribute("yourHome", sitter.getMyHome());
+        model.addAttribute("temper", sitter.getTemper());
+        model.addAttribute("activities", sitter.getActivities());
+        model.addAttribute("trav", sitter.getTrav());
+        model.addAttribute("experience", sitter.getExperience());
+
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+
+        Session session = factory.openSession();
+        Transaction tx = null;
+//        Integer UserID = null;
+        try {
+            tx = session.beginTransaction();
+            session.save(sitter);
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+//        String info = firstName + " " + lastName;
+
+        return new ModelAndView("sitterProfileSuccess", "stuff3", sitter);
+
     }
 
-
-    //second: do this annotation, and import class again.
     @RequestMapping("/createAccount")
 
-    //third:create method, import ModelAndView. Must return ModelAndView
     public ModelAndView createAccount() {
         return new ModelAndView("createAccount", "", "");
     }
@@ -320,7 +343,6 @@ public class HomeController {
         model.addAttribute("sitter", user.getSitter());
         System.out.print(user.getFirstName());
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
-
 
         Session session = factory.openSession();
         Transaction tx = null;

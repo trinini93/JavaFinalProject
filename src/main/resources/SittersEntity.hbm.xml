@@ -6,37 +6,28 @@
 
     <class name="com.grandcircus.spring.models.SittersEntity" table="SITTERS" schema="PETSITTER">
         <id name="sitId">
-            <column name="sitID" sql-type="int(11)"/>
+            <column name="sitID" sql-type="tinyint(1)"/>
         </id>
-        <property name="smDog">
-            <column name="SmDog" sql-type="tinyint(1)"/>
+        <property name="myHome">
+            <column name="myHome" sql-type="tinyint(1)" not-null="true"/>
         </property>
-        <property name="medDog">
-            <column name="MedDog" sql-type="tinyint(1)"/>
-        </property>
-        <property name="bigDog">
-            <column name="BigDog" sql-type="tinyint(1)"/>
-        </property>
-        <property name="cat">
-            <column name="Cat" sql-type="tinyint(1)"/>
-        </property>
-        <property name="inHome">
-            <column name="InHome" sql-type="tinyint(1)"/>
+        <property name="yourHome">
+            <column name="yourHome" sql-type="tinyint(1)" not-null="true"/>
         </property>
         <property name="temper">
-            <column name="Temper" sql-type="varchar(10)" length="10"/>
+            <column name="temper" sql-type="varchar(50)" length="50" not-null="true"/>
         </property>
-        <property name="feed">
-            <column name="Feed" sql-type="tinyint(1)"/>
+        <property name="petSize">
+            <column name="petSize" sql-type="varchar(60)" length="60" not-null="true"/>
         </property>
-        <property name="walk">
-            <column name="Walk" sql-type="tinyint(1)"/>
+        <property name="activities">
+            <column name="activities" sql-type="varchar(50)" length="50" not-null="true"/>
         </property>
-        <property name="play">
-            <column name="Play" sql-type="tinyint(1)"/>
+        <property name="trav">
+            <column name="trav" sql-type="varchar(35)" length="35" not-null="true"/>
         </property>
-        <property name="visit">
-            <column name="Visit" sql-type="tinyint(1)"/>
+        <property name="experience">
+            <column name="experience" sql-type="varchar(15)" length="15" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>
