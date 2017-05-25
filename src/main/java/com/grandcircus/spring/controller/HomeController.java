@@ -43,6 +43,7 @@ public class HomeController {
 
         return new ModelAndView("calendar", "hello", "Hello, World!");
     }
+
     @RequestMapping("/")
     public ModelAndView welcomePage() {
 
