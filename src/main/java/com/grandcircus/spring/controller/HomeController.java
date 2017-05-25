@@ -43,6 +43,13 @@ import java.util.ArrayList;
 public class HomeController {
 
     //req Mapping for welcome page
+    @RequestMapping("/calendar")
+    public ModelAndView calendar() {
+
+        return new ModelAndView("calendar", "hello", "Hello, World!");
+
+    }
+
     @RequestMapping("/")
     public ModelAndView welcomePage() {
 
