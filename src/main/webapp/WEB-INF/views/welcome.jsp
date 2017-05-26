@@ -12,12 +12,15 @@
 </head>
 <body>
 
+<h1>${hello}</h1>
 
-${hello}
-<p>Welcome to PetSitter
-    <br><a href="createAccount">Create An Account</a>
+<p>We love this test.
+    Use your Google Login to share pet sitting appointments with your friends.<br>
+    If you don't have a Google Account,
+    <br><a href="createAccount">Create An Account here.</a>
 <br>
-<br>Login</p>
+<br>If you have a Google Account,
+<br>Login here</p>
 
 <button id="authorize-button" style="display: none;">Authorize</button>
 <button id="signout-button" style="display: none;">Sign Out</button>
@@ -145,7 +148,13 @@ ${hello}
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
 </script>
 
-<a href="calendar">Schedule an event</a>
+When you have logged into your Google Account, <br>
+View the Pet Sitter<br>
+<a href="calendar">Calendar</a> <br>
+    to see all the Pet Sitting App appointments.
+
+
+<!-- <a href="calendar">Schedule an event</a> -->
 
 </body>
 </html>

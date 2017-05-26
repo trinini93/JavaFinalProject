@@ -38,16 +38,16 @@ import java.util.ArrayList;
 public class HomeController {
 
     //req Mapping for welcome page
-    @RequestMapping("/calendar")
-    public ModelAndView calendar() {
-
-        return new ModelAndView("calendar", "hello", "Hello, World!");
-    }
+//    @RequestMapping("/calendar")
+//    public ModelAndView calendar() {
+//
+//        return new ModelAndView("calendar", "hello", "Hello, World!");
+//    }
 
     @RequestMapping("/")
     public ModelAndView welcomePage() {
 
-        return new ModelAndView("welcome", "hello", "Hello, World!");
+        return new ModelAndView("welcome", "hello", "Welcome to the Pet Sitter App");
 
     }
     //request Mapping for parent profile/pet registration
