@@ -150,7 +150,7 @@
 
 When you have logged into your Google Account, <br>
 View the Pet Sitter<br>
-<a href="calendar">Calendar</a> <br>
+<a href="calendar?parentName=msepa5@sdcglobal.net">Calendar</a> <br>
     to see all the Pet Sitting App appointments.
 
 
