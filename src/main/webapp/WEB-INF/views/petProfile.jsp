@@ -55,7 +55,6 @@ Please fill out the form below to register your pet  with Pet Sitters.
     My pet will require:<br>
     <input type="checkbox" name="activity" value="Feeding">Feeding<br>
     <input type="checkbox" name="activity" value="Walking" checked>Walking<br>
-    <input type="checkbox" name="activity" value="playWild2" checked>Rough playing<br>
     <input type="checkbox" name="activity" value="Cuddling!" checked>Cuddling!<br>
 
 <input type ="submit">
