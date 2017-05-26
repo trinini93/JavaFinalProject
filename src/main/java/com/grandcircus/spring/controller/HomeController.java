@@ -42,19 +42,34 @@ import java.util.ArrayList;
 @Controller
 public class HomeController {
 
-    //req Mapping for welcome page
-//    @RequestMapping("/calendar")
-//    public ModelAndView calendar() {
-//
-//        return new ModelAndView("calendar", "hello", "Hello, World!");
-//    }
+
+    //CHANGE TO MAKE ON WELCOME PAGE.
+    //Step 1: REMOVE ALL WORDING FOR GOOGLE ACCOUNT/LOGIN
+    //Step 2: Remove google OAuth
+    //Step 3: Do current user login functionality (this will cross ref input with DB
+
+    //welcome pg only includes: login, or create an acct.
+
+    //make 3 diff dashboards. parent, sitter, and both.
+
+    //THIS IS FOR DASHBOARD parent PAGE
+    //Step 1: The dash will include cal and sitter network. FEATURE TO ADD(per Kim): HOW TO ADD PEOPLE TO NETWORK.
+    //  A) This page will ask if user wants to request a pet sit.
+    //  STRETCH  GOAL Update user profile option //
+    // STRETCH GOAL, CREATE DROPDOWN FOR DATES WANTING A SIT//
+
+    //sitterProfileSuccess page should route back to dashboard.
 
     @RequestMapping("/")
     public ModelAndView welcomePage() {
 
+
+
         return new ModelAndView("welcome", "hello", "Welcome to the Pet Sitter App");
 
     }
+
+
     //request Mapping for parent profile/pet registration
     @RequestMapping("/petProfile")
     public ModelAndView parentProfile() {
@@ -471,7 +486,6 @@ public class HomeController {
 //        ArrayList<UserProfileEntity> userList = (ArrayList<UserProfileEntity>) c.list();
 //        return new ModelAndView("userList", "cList", userList);
 //    }
-
 
 }
 
