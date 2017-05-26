@@ -42,21 +42,21 @@ Please fill out the form below to register your pet  with Pet Sitters.
 
 <%--Step 4: Pet's med's y/n (radio button) IF/ELSE STATEMENT NEEDED--%>
     My pet:<br>
-    <input type="radio" name="medtype" value="yes" checked> WILL need medication<br>
-    <input type="radio" name="medtype" value="no"> Will NOT need medication<br>
+    <input type="radio" name="medType" value="yes" checked> WILL need medication<br>
+    <input type="radio" name="medType" value="no"> Will NOT need medication<br>
 
 
 <%--Step 5: In home sits (can sitter come to parent's house? y/n (radio button)--%>
     I prefer to:<br>
-    <input type="radio" name="petwatch" value="prefer" >have my pet watched at my place<br>
-    <input type="radio" name="petwatch" value="preferp">have my pet watched at the sitter's place.<br>
+    <input type="radio" name="petWatch" value="have my pet watched at my place" >have my pet watched at my place<br>
+    <input type="radio" name="petWatch" value="have my pet watched at the sitter's place">have my pet watched at the sitter's place<br>
 
 <%--Step 6: Pet needs feed/walk/play wild/visit/petting? (checkbox)--%>
     My pet will require:<br>
-    <input type="checkbox" name="stuff" value="feed2">Feeding<br>
-    <input type="checkbox" name="stuff" value="walk2" checked>Walking<br>
-    <input type="checkbox" name="stuff" value="playWild2" checked>Rough playing<br>
-    <input type="checkbox" name="stuff" value="cuddles2" checked>Cuddling!<br>
+    <input type="checkbox" name="activity" value="Feeding">Feeding<br>
+    <input type="checkbox" name="activity" value="Walking" checked>Walking<br>
+    <input type="checkbox" name="activity" value="playWild2" checked>Rough playing<br>
+    <input type="checkbox" name="activity" value="Cuddling!" checked>Cuddling!<br>
 
 <input type ="submit">
 </form>

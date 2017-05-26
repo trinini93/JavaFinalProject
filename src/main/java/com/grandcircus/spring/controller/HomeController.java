@@ -239,11 +239,11 @@ public class HomeController {
     @RequestMapping("/petProfileSuccess")
     public ModelAndView addedSuccess(@RequestParam("petName") String petName,
                                      @RequestParam("testBreeds") String testBreeds,
-                                     @RequestParam("medtype") String medtype,
-                                     @RequestParam("petwatch") String petwatch,
-                                     @RequestParam("stuff") String stuff) {
+                                     @RequestParam("medType") String medType,
+                                     @RequestParam("petWatch") String petWatch,
+                                     @RequestParam("activity") String activity) {
 
-        return new ModelAndView("petProfileSuccess", "stuff2", petName + " " + testBreeds + " " + medtype + petwatch + stuff
+        return new ModelAndView("petProfileSuccess", "stuff2", petName + " " + testBreeds + " " + medType + petWatch + activity
         );
     }
 
