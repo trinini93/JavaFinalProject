@@ -1,6 +1,9 @@
 package com.grandcircus.spring.controller;
 
 import com.grandcircus.spring.models.PetNetworkEntity;
+
+import com.grandcircus.spring.models.ParentPetFormEntity;
+
 import com.grandcircus.spring.models.SittersEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.client.ClientProtocolException;
@@ -241,11 +244,36 @@ public class HomeController {
     @RequestMapping("/petProfileSuccess")
     public ModelAndView addedSuccess(@RequestParam("petName") String petName,
                                      @RequestParam("testBreeds") String testBreeds,
-                                     @RequestParam("medtype") String medtype,
-                                     @RequestParam("petwatch") String petwatch,
-                                     @RequestParam("stuff") String stuff) {
+                                     @RequestParam("medType") String medType,
+                                     @RequestParam("petWatch") String petWatch,
+                                     @RequestParam("activity") String activity) {
 
-        return new ModelAndView("petProfileSuccess", "stuff2", petName + " " + testBreeds + " " + medtype + petwatch + stuff
+        ParentPetFormEntity parentPet = new ParentPetFormEntity();
+
+        //we may not need this.
+        parentPet.setUserId(" ");
+
+        parentPet.setPetName(petName);
+        parentPet.setBreeds(testBreeds);
+        parentPet.setMedType(medType);
+        parentPet.setPetWatch(petWatch);
+        parentPet.setActivity(activity);
+
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+
+        Session session = factory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            session.save(parentPet);
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return new ModelAndView("petProfileSuccess", "stuff2", petName + " " + testBreeds + " " + medType + petWatch + activity
         );
     }
 
