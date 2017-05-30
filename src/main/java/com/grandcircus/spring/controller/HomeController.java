@@ -43,7 +43,7 @@ import java.util.ArrayList;
 public class HomeController {
 
 
-    //CHANGE TO MAKE ON WELCOME PAGE.
+    //WELCOME PAGE
     //Step 1: REMOVE ALL WORDING FOR GOOGLE ACCOUNT/LOGIN
     //Step 2: Remove google OAuth
     //Step 3: Do current user login functionality (this will cross ref input with DB
