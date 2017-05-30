@@ -64,7 +64,6 @@ public class HomeController {
     public ModelAndView welcomePage() {
 
 
-
         return new ModelAndView("welcome", "hello", "Welcome to the Pet Sitter App");
 
     }
@@ -294,13 +293,13 @@ public class HomeController {
 
     @RequestMapping("/sitterProfileSuccess")
     public ModelAndView testSitterProfilePage(
-                                              @RequestParam("petSize") String petSize,
-                                              @RequestParam("myHome") byte myHome,
-                                              @RequestParam("yourHome") byte yourHome,
-                                              @RequestParam("temper") String temper,
-                                              @RequestParam("activities") String activities,
-                                              @RequestParam("trav") String trav,
-                                              @RequestParam ("experience") String experience, Model model) {
+            @RequestParam("petSize") String petSize,
+            @RequestParam("myHome") byte myHome,
+            @RequestParam("yourHome") byte yourHome,
+            @RequestParam("temper") String temper,
+            @RequestParam("activities") String activities,
+            @RequestParam("trav") String trav,
+            @RequestParam("experience") String experience, Model model) {
         SittersEntity sitter = new SittersEntity();
 
         sitter.setPetSize(petSize);
@@ -423,69 +422,6 @@ public class HomeController {
         // also the POJO                         casting the 'list' to the arrayList of the type CustomerEntity. CustomerEntity is the Object.
         return (ArrayList<SittersEntity>) c.list();
     }
-
-//    public String listNetworkMatch() {
-//        // this defines the configuration and mapping resources
-//        Configuration configurationObject = new Configuration().configure("hibernate.cfg.xml");
-//
-//        SessionFactory sessionFact = configurationObject.buildSessionFactory();
-//
-//        Session netwkSession = sessionFact.openSession();
-//
-//        netwkSession.beginTransaction();
-//
-//        Criteria match = netwkSession.createCriteria(SittersEntity.class);
-//
-//        String netwkMatch = "SitterEmail";
-//        // add restrictions to filter the city entered into the form
-//        match.add(Restrictions.like(netwkMatch));
-//
-//        return netwkMatch;
-//    }
-
-
-// not working yet
-//    @RequestMapping("listNetworkMatch")
-//    public ModelAndView listNetworkMatch(){
-//        //we must first create a session so that we can interact with the database
-//        Configuration configurationObject = new Configuration().configure("hibernate.cfg.xml");
-//        SessionFactory sessionFactory = configurationObject.buildSessionFactory();
-//        Session adminSession = sessionFactory.openSession();
-//
-//        // opening a transaction (I'm not sure if this part is necessary)
-//        Transaction myNetwork = adminSession.beginTransaction();
-//
-//        int UserIDnum = 4; //this can be any thing, really, as long as it matches the type of data you're looking for.
-//
-//        //create a criteria for the entity type you'll be searching through
-//        Criteria myNetwkFriends = adminSession.createCriteria(PetNetworkEntity.class);
-//
-//        //creates a criteria requirement, and says if an item in column "sitterEmail" matches the family of "UserIDnum", to pull a single result. Use .list() for multiple results.
-//        PetNetworkEntity thisFriend = (PetNetworkEntity) myNetwkFriends.add(Restrictions.eq("sitterEmail", UserIDnum)).list();
-//
-//        // passes the family object to the jsp page as an EL tag
-//        return new ModelAndView("calendar", "sitteremail", thisFriend);
-//
-//    }
-
-
-//  //original from class
-//    @RequestMapping("listUserProfile")
-//    public ModelAndView listUserProfile() {
-//
-//        org.hibernate.cfg.Configuration cfg = new org.hibernate.cfg.Configuration().configure("hibernate.cfg.xml");
-//
-//        SessionFactory sessionFact = cfg.buildSessionFactory();
-//
-//        Session selectUserProfile = sessionFact.openSession();
-//
-//        selectUserProfile.beginTransaction();
-//
-//        Criteria c = selectUserProfile.createCriteria(UserProfileEntity.class);
-//
-//        ArrayList<UserProfileEntity> userList = (ArrayList<UserProfileEntity>) c.list();
-//        return new ModelAndView("userList", "cList", userList);
-//    }
 
 }
 
