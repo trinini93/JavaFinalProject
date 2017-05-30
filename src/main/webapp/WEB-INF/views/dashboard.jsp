@@ -62,14 +62,24 @@
 <h2>Your Howl Hug Dashboard</h2>
 <br>
 <p>Select an email from your Network of Sitters to request an appointment for sitting.</p><br>
-<c:forEach items="${sitterEmail}" var ="sEmail">
+<c:forEach items="${sitterEmail}" var ="sEmail"> <br>
+
+    <p>If you would like to add a Sitter to your network, please fill out the form below.</p>
+
 
     <a href="mailto:${sEmail.sitterEmail}?subject=Hello,%20Can%20you%20sit%3F&body=Hello,%0D%0DCan%20you%20sit%20for%20my%20pet%20on:">${sEmail.sitterEmail}</a><br>
 </c:forEach>
 
 <br>
 <br>
+<%--this form will add a sitter to parent network.--%>
 
+<p>Click below to add a sitter to your Network.</p>
+<form action="addASitter" method="post">
+    Sitter name: <input type="text" name="sName"><br>
+    Sitter email: <input type="text" name="sEmail"><br>
+    <input type="submit" value="Submit">
+</form> <br>
 
 <iframe src="
 https://calendar.google.com/calendar/embed?src=ci0im9019ojt8m3dmkmlbc68qo@group.calendar.google.com" width="800" height="600" frameborder="0" scrolling="no"></iframe>
