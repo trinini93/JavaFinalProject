@@ -1,10 +1,7 @@
 package com.grandcircus.spring.controller;
 
-import com.grandcircus.spring.models.PetNetworkEntity;
+import com.grandcircus.spring.models.*;
 
-import com.grandcircus.spring.models.ParentPetFormEntity;
-
-import com.grandcircus.spring.models.SittersEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -28,7 +25,6 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import com.grandcircus.spring.models.UserProfileEntity;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -423,6 +419,34 @@ public class HomeController {
         // also the POJO                         casting the 'list' to the arrayList of the type CustomerEntity. CustomerEntity is the Object.
         return (ArrayList<SittersEntity>) c.list();
     }
+
+    @RequestMapping("/addASitter")
+    public ModelAndView addASitter (@RequestParam("sName") String sName,
+                                    @RequestParam("sEmail") String sEmail) {
+
+        AddSitterEntity sitters = new AddSitterEntity();
+
+        sitters.setSitterName(sName);
+        sitters.setSitterEmail(sEmail);
+
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+
+        Session session = factory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            session.save(sitters);
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return new ModelAndView("dashboard", "sitterAdded", "");
+    }
+
 
 }
 
