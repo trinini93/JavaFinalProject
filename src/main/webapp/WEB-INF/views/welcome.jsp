@@ -88,6 +88,9 @@
                                 <button id="authorize-button" style="display: none;" class="form-control">Authorize</button>
                                 <button id="signout-button" style="display: none;" class="form-control">Sign Out</button>
                                 <pre id="content"></pre>
+
+
+
                                 </div>
                                 <br>
                                 <br>
@@ -326,6 +329,12 @@
         </div>
     </div>
 </section><!--/#bottom-->
+
+<%--<form action="/dashboard" method="post">--%>
+    <%--<input type="hidden" name="status" id="status" value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>--%>
+    <%--<input type="submit" value = "Dashboard">--%>
+<%--</form>--%>
+
 
 <!-- END BOOTSTRAP HTML -->
 <script type="text/javascript">

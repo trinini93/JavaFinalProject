@@ -124,7 +124,10 @@
                         <td><div class="col-xs-2">
                             <input id="authorize-button" type="submit" value="Submit" class="form-control" />
                             </div>
-
+                            <form action="/dashboard" method="post">
+                                <input type="hidden" name="status" id="status" value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>
+                                <input type="submit" value = "Dashboard">
+                            </form>
 
                         </td>
                     </tr>
@@ -132,31 +135,31 @@
             </table>
         </form>
 </div>
-<%--<script>--%>
-    <%--function validateForm() {--%>
-        <%--var userEmail = document.forms["userInfo"]["email"].value;--%>
+<script>
+    function validateForm() {
+        var userEmail = document.forms["userInfo"]["email"].value;
 
-        <%--var password = document.forms["userInfo"]["password"].value;--%>
-        <%--var repeatPassword = document.forms["userInfo"]["repeatPassword"].value;--%>
-        <%--if (email === "" || firstName === "" || lastName === "" || address === "" || city === "" || state === "" || zip === "" || passWord === "" || repeatPassword === "" || parent === "" || sitter === "" ) {--%>
-            <%--alert("Please complete all fields to join the Coffee Club!");--%>
-            <%--return false;--%>
-        <%--}--%>
-        <%--if (!userEmail.includes("@")) {--%>
-            <%--alert("Please enter a valid email!");--%>
-            <%--return false;--%>
-        <%--}--%>
-        <%--if (!userEmail.includes(".")) {--%>
-            <%--alert("Please enter a valid email!");--%>
-            <%--return false;--%>
-        <%--}--%>
-        <%--if (password !== repeatPassword) {--%>
-            <%--alert("The passwords entered do not match!");--%>
-            <%--return false;--%>
-        <%--}--%>
-        <%--return true;--%>
-    <%--}--%>
-<%--</script>--%>
+        var password = document.forms["userInfo"]["password"].value;
+        var repeatPassword = document.forms["userInfo"]["repeatPassword"].value;
+        if (email === "" || firstName === "" || lastName === "" || address === "" || city === "" || state === "" || zip === "" || passWord === "" || repeatPassword === "" || parent === "" || sitter === "" ) {
+            alert("Please complete all fields to join the Coffee Club!");
+            return false;
+        }
+        if (!userEmail.includes("@")) {
+            alert("Please enter a valid email!");
+            return false;
+        }
+        if (!userEmail.includes(".")) {
+            alert("Please enter a valid email!");
+            return false;
+        }
+        if (password !== repeatPassword) {
+            alert("The passwords entered do not match!");
+            return false;
+        }
+        return true;
+    }
+</script>
 
 
 <!-- Google Login script -->
