@@ -389,7 +389,7 @@ public class HomeController {
     }
 
 
-    @RequestMapping("listUserProfile")
+    @RequestMapping("/userList")
     public ModelAndView listUserProfile() {
 
         org.hibernate.cfg.Configuration cfg = new org.hibernate.cfg.Configuration().configure("hibernate.cfg.xml");

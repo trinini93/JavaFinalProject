@@ -40,7 +40,7 @@ import java.util.ArrayList;
  */
 
 @Controller
-public class CalendarController {
+public class  CalendarController {
 
     //req Mapping for welcome page
     @RequestMapping("/calendar")

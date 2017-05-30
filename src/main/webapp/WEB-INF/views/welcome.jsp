@@ -25,6 +25,11 @@
 <button id="authorize-button" style="display: none;">Authorize</button>
 <button id="signout-button" style="display: none;">Sign Out</button>
 
+<form action="/dashboard" method="post">
+    <input type="hidden" name="status" id="status" value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>
+    <input type="submit" value = "Dashboard">
+</form>
+
 <pre id="content"></pre>
 
 <script type="text/javascript">
@@ -77,6 +82,7 @@
             authorizeButton.style.display = 'none';
             signoutButton.style.display = 'block';
             console.log(gapi.auth2.getAuthInstance().currentUser.get().getId());
+            document.getElementById('status').value = gapi.auth2.getAuthInstance().currentUser.get().getId();
         } else {
             authorizeButton.style.display = 'block';
             signoutButton.style.display = 'none';

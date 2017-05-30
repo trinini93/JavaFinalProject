@@ -15,7 +15,7 @@
     <title>Pet Sitter Network</title>
 </head>
 <body>
-<table border=1> <c:forEach var="myvar" items="${userList}">
+<table border=1> <c:forEach var="myvar" items="${cList}">
     <tr>
         <td> ${myvar.firstName}</td>
         <td> ${myvar.lastName}</td>
