@@ -48,7 +48,7 @@ import java.util.List;
 public class CalendarController {
 
 
-    @RequestMapping("calendar")
+    @RequestMapping("dashboard")
     public ModelAndView listNetworkMatch(@RequestParam("parentName") String parentEmail){
         System.out.print(parentEmail);
         //we must first create a session so that we can interact with the database
@@ -74,16 +74,16 @@ public class CalendarController {
 //            System.out.println(p.getSitterEmail());
 //        }
         // passes the family object to the jsp page as an EL tag
-        return new ModelAndView("calendar", "sitterEmail", list);
+        return new ModelAndView("dashboard", "sitterEmail", list);
 
     }
 
 
     //req Mapping for welcome page
-//    @RequestMapping("/calendar")
-//    public ModelAndView calendar() {
+//    @RequestMapping("/dashboard")
+//    public ModelAndView dashboard() {
 //
-//        return new ModelAndView("calendar", "hello", "Hello, World!");
+//        return new ModelAndView("dashboard", "hello", "Hello, World!");
 //
 //    }
 }
