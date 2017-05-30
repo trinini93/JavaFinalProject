@@ -7,88 +7,153 @@
 --%>
 <%--<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html lang="en">
 <head>
-    <title>Create An Account</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create an Account for Howl Hugs Pet Sitter App</title>
+
+
+    <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet" >
+    <link href="<c:url value="/resources/css/font-awesome.min.css"/>" rel="stylesheet" >
+    <link href="<c:url value="/resources/css/prettyPhoto.css" />"rel="stylesheet" >
+    <link href="<c:url value="/resources/css/animate.css" />"rel="stylesheet" >
+    <link href="<c:url value="/resources/css/main.css" />"rel="stylesheet" >
+    <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="/resources/js/html5shiv.js"></script>
+    <script src="/resources/js/respond.min.js"></script>
+
+    <![endif]-->
+
+    <link href="<c:url value="/resources/images/ico/favicon.ico"/>" rel="shortcut icon" >
+    <link sizes="144x144" href="<c:url value="/resources/images/ico/apple-touch-icon-144-precomposed.png"/>" rel="apple-touch-icon-precomposed" >
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<c:url value="/resources/images/ico/apple-touch-icon-114-precomposed.png"/>" >
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<c:url value="/resources/images/ico/apple-touch-icon-72-precomposed.png"/>" >
+    <link rel="apple-touch-icon-precomposed" href="<c:url value="/resources/images/ico/apple-touch-icon-57-precomposed.png"/>" >
+
 </head>
 <body>
-<h2 >Customer Registration</h2>
-            <form name="userInfo" method="GET" action="/finishAccount" onsubmit="return validateForm();">
-                <p> Fill out form completely to join the PetSitter Web App </p>
-                <table>
-                    <tr>
-                        <td>Email: <input type="text" name="email" required></td>
+<!-- top main nav -->
+<header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src=<c:url value="/resources/images/logo.png"/> alt="logo"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hover"><a href="/">Home</a></li>
+                <!-- <li><a href="about-us.html">About Howl Hugs</a></li> -->
+                <li class="hover"><a href="/dashboard">Dashboard</a></li>
+            </ul>
+        </div>
+    </div>
+</header><!--/header-->
 
+<!-- BEGIN REGISTRATION FORM -->
+<section id="title" class="emerald">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Howl Hugs Member Registration</h2>
+                <p>As a registered member, you may build a network of memeber-friends <br>
+                    to schedule Pet Sittings with. You can register as a Pet Parent, or a Sitter, or Both.</p>
+            </div>
+  <!-- REDUNDANT NAVIGATION -->
+            <%--<div class="col-sm-6">--%>
+                <%--<ul class="breadcrumb pull-right">--%>
+                    <%--<li><a href="index.html">Home</a></li>--%>
+                    <%--<li><a href="#">Pages</a></li>--%>
+                    <%--<li class="active">Registration</li>--%>
+                <%--</ul>--%>
+            <%--</div>--%>
+        </div>
+    </div>
+</section><!--/#title-->
+<div class="form-group center_div">
+        <form name="userInfo" method="GET" action="/finishAccount" onsubmit="return validateForm();">
+            <h2>Fill out form completely to join the <br>Howl Hugs Pet Sitter Web App</h2>
+            <table>
+                <div class="col-xs-6">
+                    <tr>
+                        <td>Email: <input type="text" name="email" required class="form-control"></td>
                     </tr>
                     <tr>
-                        <td>First Name: <input type="text" name="firstName" required></td>
+                        <td>First Name: <input type="text" name="firstName" required class="form-control"></td>
                     </tr>
                     <tr>
-                        <td>Last Name: <input type="text" name="lastName" required></td>
+                        <td>Last Name: <input type="text" name="lastName" required class="form-control"></td>
                     </tr>
                     <tr>
-                        <td>Address: <input type="text" name="address" required></td>
+                        <td>Address: <input type="text" name="address" required class="form-control"></td>
                     </tr>
                     <tr>
-                        <td>Apt: <input type="text" name="apt" ></td>
+                        <td>Apt: <input type="text" name="apt" class="form-control"></td>
                     </tr>
                     <tr>
-                        <td>City: <input type="text" name="city" required></td>
+                        <td>City: <input type="text" name="city" required class="form-control"></td>
                     </tr>
                     <tr>
-                        <td>State: <input type="text" name="state" required></td>
+                        <td>State: <input type="text" name="state" required class="form-control"></td>
                     </tr>
                     <tr>
-                        <td>Zip: <input type="text" name="zip" required></td>
-
+                        <td>Zip: <input type="text" name="zip" required class="form-control"></td>
                     </tr>
                     <tr>
-                        <td>Password: <input type="password" name="password" required></td>
+                        <td>Password: <input type="password" name="password" required class="form-control"></td>
                     </tr>
                     <tr>
-                        <td>Repeat Password: <input type="password" name="repeatPassword" required></td>
-
-                    </tr>
+                        <td>Repeat Password: <input type="password" name="repeatPassword" required class="form-control"></td>
+                    </tr><br><br>
                     <tr>
                         <td>Are you a Parent: <input type="radio" name="parent" value="1" checked>Yes    <input type="radio" name="parent" value="0">No</td>
-
-                     <tr>
+                    </tr><br><br>
+                    <tr>
                         <td>Are you a Sitter: <input type="radio" name="sitter" value="1" checked>Yes     <input type="radio" name="sitter" value="0">No</td>
-
-                    </tr>
+                    </tr><br><br>
                     <tr>
                         <td>
-                            <input type="submit" value="Submit"/>
+                            <input type="submit" value="Submit" class="form-control" />
                         </td>
                     </tr>
-                </table>
-            </form>
+                </div>
+            </table>
+        </form>
+</div>
+<%--<script>--%>
+    <%--function validateForm() {--%>
+        <%--var userEmail = document.forms["userInfo"]["email"].value;--%>
 
-<script>
-    function validateForm() {
-        var userEmail = document.forms["userInfo"]["email"].value;
-
-        var password = document.forms["userInfo"]["password"].value;
-        var repeatPassword = document.forms["userInfo"]["repeatPassword"].value;
-        if (email === "" || firstName === "" || lastName === "" || address === "" || city === "" || state === "" || zip === "" || passWord === "" || repeatPassword === "" || parent === "" || sitter === "" ) {
-            alert("Please complete all fields to join the Coffee Club!");
-            return false;
-        }
-        if (!userEmail.includes("@")) {
-            alert("Please enter a valid email!");
-            return false;
-        }
-        if (!userEmail.includes(".")) {
-            alert("Please enter a valid email!");
-            return false;
-        }
-        if (password !== repeatPassword) {
-            alert("The passwords entered do not match!");
-            return false;
-        }
-        return true;
-    }
-</script>
+        <%--var password = document.forms["userInfo"]["password"].value;--%>
+        <%--var repeatPassword = document.forms["userInfo"]["repeatPassword"].value;--%>
+        <%--if (email === "" || firstName === "" || lastName === "" || address === "" || city === "" || state === "" || zip === "" || passWord === "" || repeatPassword === "" || parent === "" || sitter === "" ) {--%>
+            <%--alert("Please complete all fields to join the Coffee Club!");--%>
+            <%--return false;--%>
+        <%--}--%>
+        <%--if (!userEmail.includes("@")) {--%>
+            <%--alert("Please enter a valid email!");--%>
+            <%--return false;--%>
+        <%--}--%>
+        <%--if (!userEmail.includes(".")) {--%>
+            <%--alert("Please enter a valid email!");--%>
+            <%--return false;--%>
+        <%--}--%>
+        <%--if (password !== repeatPassword) {--%>
+            <%--alert("The passwords entered do not match!");--%>
+            <%--return false;--%>
+        <%--}--%>
+        <%--return true;--%>
+    <%--}--%>
+<%--</script>--%>
 
 
 </body>

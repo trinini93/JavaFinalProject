@@ -1,7 +1,7 @@
 package com.grandcircus.spring.controller;
 
-import com.grandcircus.spring.models.ParentPetFormEntity;
-import com.grandcircus.spring.models.SittersEntity;
+import com.grandcircus.spring.models.*;
+
 import org.apache.http.HttpHost;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -9,6 +9,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,10 +25,10 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import com.grandcircus.spring.models.UserProfileEntity;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 
 import java.util.ArrayList;
 
@@ -38,19 +39,34 @@ import java.util.ArrayList;
 @Controller
 public class HomeController {
 
-    //req Mapping for welcome page
-//    @RequestMapping("/calendar")
-//    public ModelAndView calendar() {
-//
-//        return new ModelAndView("calendar", "hello", "Hello, World!");
-//    }
+
+    //WELCOME PAGE
+    //Step 1: REMOVE ALL WORDING FOR GOOGLE ACCOUNT/LOGIN
+    //Step 2: Remove google OAuth
+    //Step 3: Do current user login functionality (this will cross ref input with DB
+
+    //welcome pg only includes: login, or create an acct.
+
+    //make 3 diff dashboards. parent, sitter, and both.
+
+    //THIS IS FOR PARENT DASH
+    //Step 1: The dash will include cal and sitter network. FEATURE TO ADD(per Kim): HOW TO ADD PEOPLE TO NETWORK.
+    //  A) This page will ask if user wants to request a pet sit.
+    //  STRETCH  GOAL Update user profile option //
+    // STRETCH GOAL, CREATE DROPDOWN FOR DATES WANTING A SIT//
+
+
+    //sitterProfileSuccess page should route back to dashboard.
 
     @RequestMapping("/")
     public ModelAndView welcomePage() {
 
+
         return new ModelAndView("welcome", "hello", "Welcome to the Pet Sitter App");
 
     }
+
+
     //request Mapping for parent profile/pet registration
     @RequestMapping("/petProfile")
     public ModelAndView parentProfile() {
@@ -275,13 +291,13 @@ public class HomeController {
 
     @RequestMapping("/sitterProfileSuccess")
     public ModelAndView testSitterProfilePage(
-                                              @RequestParam("petSize") String petSize,
-                                              @RequestParam("myHome") byte myHome,
-                                              @RequestParam("yourHome") byte yourHome,
-                                              @RequestParam("temper") String temper,
-                                              @RequestParam("activities") String activities,
-                                              @RequestParam("trav") String trav,
-                                              @RequestParam ("experience") String experience, Model model) {
+            @RequestParam("petSize") String petSize,
+            @RequestParam("myHome") byte myHome,
+            @RequestParam("yourHome") byte yourHome,
+            @RequestParam("temper") String temper,
+            @RequestParam("activities") String activities,
+            @RequestParam("trav") String trav,
+            @RequestParam("experience") String experience, Model model) {
         SittersEntity sitter = new SittersEntity();
 
         sitter.setPetSize(petSize);
@@ -388,22 +404,50 @@ public class HomeController {
         return new ModelAndView("finishAccount", "addUser", info);
     }
 
+    public ArrayList<SittersEntity> getSitterEntity() {
+        // this defines the configuration and mapping resources
+        Configuration configurationObject = new Configuration().configure("hibernate.cfg.xml");
 
-    @RequestMapping("/userList")
-    public ModelAndView listUserProfile() {
+        SessionFactory sessionFactory = configurationObject.buildSessionFactory();
+        
 
-        org.hibernate.cfg.Configuration cfg = new org.hibernate.cfg.Configuration().configure("hibernate.cfg.xml");
+        Session selectSitters = sessionFactory.openSession();
 
-        SessionFactory sessionFact = cfg.buildSessionFactory();
 
-        Session selectUserProfile = sessionFact.openSession();
+        selectSitters.beginTransaction();
 
-        selectUserProfile.beginTransaction();
+        Criteria c = selectSitters.createCriteria(SittersEntity.class); //pulling the entire list of customers from the database
 
-        Criteria c = selectUserProfile.createCriteria(UserProfileEntity.class);
+        // create an entire arraylist to capture complete database instead of only one item
+        // also the POJO                         casting the 'list' to the arrayList of the type CustomerEntity. CustomerEntity is the Object.
+        return (ArrayList<SittersEntity>) c.list();
+    }
 
-        ArrayList<UserProfileEntity> userList = (ArrayList<UserProfileEntity>) c.list();
-        return new ModelAndView("userList", "cList", userList);
+    @RequestMapping("/addASitter")
+    public ModelAndView addASitter (@RequestParam("sName") String sName,
+                                    @RequestParam("sEmail") String sEmail) {
+
+        AddSitterEntity sitters = new AddSitterEntity();
+
+        sitters.setSitterName(sName);
+        sitters.setSitterEmail(sEmail);
+
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+
+        Session session = factory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            session.save(sitters);
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return new ModelAndView("dashboard", "sitterAdded", "");
     }
 
 
