@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.grandcircus.spring.models.AddSitterEntity" table="AddSitter" schema="PETSITTER">
+        <id name="idAddSitter">
+            <column name="idAddSitter" sql-type="int(11)"/>
+        </id>
+        <property name="sitterName">
+            <column name="SitterName" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="sitterEmail">
+            <column name="SitterEmail" sql-type="varchar(45)" length="45"/>
+        </property>
+    </class>
+</hibernate-mapping>
