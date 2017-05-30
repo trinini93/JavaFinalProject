@@ -6,25 +6,103 @@
   Time: 5:11 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<html lang="en">
 <head>
-    <title>Pet Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Complete a Howl Hug Member Profile for your Pet</title>
+
+
+    <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet" >
+    <link href="<c:url value="/resources/css/font-awesome.min.css"/>" rel="stylesheet" >
+    <link href="<c:url value="/resources/css/prettyPhoto.css" />"rel="stylesheet" >
+    <link href="<c:url value="/resources/css/animate.css" />"rel="stylesheet" >
+    <link href="<c:url value="/resources/css/main.css" />"rel="stylesheet" >
+    <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="/resources/js/html5shiv.js"></script>
+    <script src="/resources/js/respond.min.js"></script>
+
+    <![endif]-->
+
+    <link href="<c:url value="/resources/images/ico/favicon.ico"/>" rel="shortcut icon" >
+    <link sizes="144x144" href="<c:url value="/resources/images/ico/apple-touch-icon-144-precomposed.png"/>" rel="apple-touch-icon-precomposed" >
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<c:url value="/resources/images/ico/apple-touch-icon-114-precomposed.png"/>" >
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<c:url value="/resources/images/ico/apple-touch-icon-72-precomposed.png"/>" >
+    <link rel="apple-touch-icon-precomposed" href="<c:url value="/resources/images/ico/apple-touch-icon-57-precomposed.png"/>" >
+
 </head>
 <body>
-<h1>Welcome to Pet Sitters!</h1>
+<!-- top main nav -->
+<header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><img src=<c:url value="/resources/images/logo.png"/> alt="logo"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="/welcome">Home</a></li>
+                <li><a href="about-us.html">About Howl Hugs</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dashboard <i class="icon-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/createAccount">Update Your Profile</a></li>
+                        <li><a href="/createAccount">Update Your Network</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/calendar">View Calendar</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header><!--/header-->
+<!-- BEGIN REGISTRATION FORM -->
+<section id="title" class="emerald">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>Welcome to Pet Sitters!</h1>
+                <p>Please fill out the form below to register your pet  with Pet Sitters.</p>
+            </div>
+            <!-- REDUNDANT NAVIGATION -->
+            <%--<div class="col-sm-6">--%>
+            <%--<ul class="breadcrumb pull-right">--%>
+            <%--<li><a href="index.html">Home</a></li>--%>
+            <%--<li><a href="#">Pages</a></li>--%>
+            <%--<li class="active">Registration</li>--%>
+            <%--</ul>--%>
+            <%--</div>--%>
+        </div>
+    </div>
+</section><!--/#title-->
 
-Please fill out the form below to register your pet  with Pet Sitters.
+
 
 
 <%--ACTION is empty until we figure out which page this is going to--%>
-<form action="/dogBreedList">
+<div class="form-group center_div">
+    <div class="col-sm-6">
+    <form action="/dogBreedList">
+        <h2 class="form-heading">Please fill out form completely.</h2>
+
+<!-- <form action="/dogBreedList"> -->
 
 <%--Step 1: Pet type dog/cat (radio button)--%>
     I have a:<br>
     <input type="radio" name="pettype" value="dog" checked> Dog<br>
     <input type="radio" name="pettype" value="cat"> Cat<br>
 <input type="submit"> <br>
+        'Submit' before continuing with this questionnaire.<br>
 </form>
 <%--Step 2: Pet's name (text form)--%>
     <form action = "/petProfileSuccess" method ="post">
@@ -60,6 +138,8 @@ Please fill out the form below to register your pet  with Pet Sitters.
 
 <input type ="submit">
 </form>
+    </div>
+</div>
 
 </body>
 </html>

@@ -91,11 +91,15 @@
                                     for your pets while you are away.</h2>
                                 <h1 class="animation animated-item-2" ><br><a href="createAccount" style="color:#3c5899">Register</a></h1><br><br>
                                 <!-- NEED LINK TO LOGIN HERE  -->
-                                <h3 style="color:#3c5899">If you have a Google Account,<br>
-                                Login here</h3>
+                                <h3 style="color:#3c5899">Login here if you have a Google Account:</h3>
+                                <div class="col-xs-2">
                                 <button id="authorize-button" style="display: none;" class="form-control">Authorize</button>
                                 <button id="signout-button" style="display: none;" class="form-control">Sign Out</button>
                                 <pre id="content"></pre>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
 
                                 <h3 style="color:#3c5899">View the Pet Sitter <a href="calendar?parentName=msepa5@sdcglobal.net" style="color:#3c5899">Calendar</a> <br>
                                 to see all the Pet Sitting App appointments.</h3>
@@ -258,7 +262,7 @@
                         <li><a href="#">Our Awesome Partners</a></li>
                         <li><a href="#">Our Services</a></li>
                         <li><a href="#">Frequently Asked Questions</a></li>
-                        <li><a href="#">Conatct Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms of Use</a></li>
                         <li><a href="#">Copyright</a></li>

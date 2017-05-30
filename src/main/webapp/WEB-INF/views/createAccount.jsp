@@ -72,7 +72,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <h1>Howl Hugs Member Registration</h1>
+                <h2>Howl Hugs Member Registration</h2>
                 <p>As a registered member, you may build a network of memeber-friends <br>
                     to schedule Pet Sittings with. You can register as a Pet Parent, or a Sitter, or Both.</p>
             </div>
@@ -91,6 +91,7 @@
         <form name="userInfo" method="GET" action="/finishAccount" onsubmit="return validateForm();">
             <h2 class="form-heading">Fill out form completely to join the Howl Hugs Pet Sitter Web App</h2>
             <table>
+                <div class="col-xs-6">
                     <tr>
                         <td>Email: <input type="text" name="email" required class="form-control"></td>
                     </tr>
@@ -132,35 +133,35 @@
                             <input type="submit" value="Submit" class="form-control" />
                         </td>
                     </tr>
-                </table>
-            </form>
-
+                </div>
+            </table>
+        </form>
 </div>
-<script>
-    function validateForm() {
-        var userEmail = document.forms["userInfo"]["email"].value;
+<%--<script>--%>
+    <%--function validateForm() {--%>
+        <%--var userEmail = document.forms["userInfo"]["email"].value;--%>
 
-        var password = document.forms["userInfo"]["password"].value;
-        var repeatPassword = document.forms["userInfo"]["repeatPassword"].value;
-        if (email === "" || firstName === "" || lastName === "" || address === "" || city === "" || state === "" || zip === "" || passWord === "" || repeatPassword === "" || parent === "" || sitter === "" ) {
-            alert("Please complete all fields to join the Coffee Club!");
-            return false;
-        }
-        if (!userEmail.includes("@")) {
-            alert("Please enter a valid email!");
-            return false;
-        }
-        if (!userEmail.includes(".")) {
-            alert("Please enter a valid email!");
-            return false;
-        }
-        if (password !== repeatPassword) {
-            alert("The passwords entered do not match!");
-            return false;
-        }
-        return true;
-    }
-</script>
+        <%--var password = document.forms["userInfo"]["password"].value;--%>
+        <%--var repeatPassword = document.forms["userInfo"]["repeatPassword"].value;--%>
+        <%--if (email === "" || firstName === "" || lastName === "" || address === "" || city === "" || state === "" || zip === "" || passWord === "" || repeatPassword === "" || parent === "" || sitter === "" ) {--%>
+            <%--alert("Please complete all fields to join the Coffee Club!");--%>
+            <%--return false;--%>
+        <%--}--%>
+        <%--if (!userEmail.includes("@")) {--%>
+            <%--alert("Please enter a valid email!");--%>
+            <%--return false;--%>
+        <%--}--%>
+        <%--if (!userEmail.includes(".")) {--%>
+            <%--alert("Please enter a valid email!");--%>
+            <%--return false;--%>
+        <%--}--%>
+        <%--if (password !== repeatPassword) {--%>
+            <%--alert("The passwords entered do not match!");--%>
+            <%--return false;--%>
+        <%--}--%>
+        <%--return true;--%>
+    <%--}--%>
+<%--</script>--%>
 
 
 </body>
