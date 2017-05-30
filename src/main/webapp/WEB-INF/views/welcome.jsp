@@ -59,7 +59,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="/">Home</a></li>
                 <!-- <li><a href="about-us.html">About Howl Hugs</a></li> -->
-                <li class="hover"><a href="/dashboard">Dashboard</a></li>
+                <li class="hover"><a href="dashboard">Dashboard</a></li>
             </ul>
         </div>
     </div>
