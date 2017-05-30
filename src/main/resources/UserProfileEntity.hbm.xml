@@ -44,5 +44,8 @@
         <property name="sitter">
             <column name="sitter" sql-type="tinyint(4)"/>
         </property>
+        <property name="googleNum">
+            <column name="googleNum" sql-type="int(30)" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>

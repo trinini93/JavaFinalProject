@@ -1,10 +1,9 @@
 package com.grandcircus.spring.controller;
 
-import com.grandcircus.spring.models.PetNetworkEntity;
-
 import com.grandcircus.spring.models.ParentPetFormEntity;
 
 import com.grandcircus.spring.models.SittersEntity;
+import com.grandcircus.spring.models.UserProfileEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -12,7 +11,6 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
-import org.hibernate.criterion.Restrictions;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,7 +26,6 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import com.grandcircus.spring.models.UserProfileEntity;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -60,6 +57,8 @@ public class HomeController {
 
 
     //sitterProfileSuccess page should route back to dashboard.
+
+
 
     @RequestMapping("/")
     public ModelAndView welcomePage() {
