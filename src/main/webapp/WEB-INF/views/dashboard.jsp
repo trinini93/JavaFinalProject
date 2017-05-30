@@ -73,6 +73,8 @@
 <br>
 <br>
 <%--this form will add a sitter to parent network.--%>
+
+<p>Click below to add a sitter to your Network.</p>
 <form action="addASitter" method="post">
     Sitter name: <input type="text" name="sName"><br>
     Sitter email: <input type="text" name="sEmail"><br>
