@@ -59,7 +59,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="/">Home</a></li>
                 <!-- <li><a href="about-us.html">About Howl Hugs</a></li> -->
-                <li><a href="/dashboard">Dashboard</a></li>
+                <li class="hover"><a href="/dashboard">Dashboard</a></li>
             </ul>
         </div>
     </div>
@@ -93,8 +93,8 @@
                                 <br>
                                 <br>
 
-                                <h3 style="color:#3c5899">View the Pet Sitter <a href="calendar?parentName=msepa5@sdcglobal.net" style="color:#3c5899">Calendar</a> <br>
-                                to see all the Pet Sitting App appointments.</h3>
+                                <h3 style="color:#3c5899">View the Pet Sitter <a href="calendar?parentName=msepa5@sdcglobal.net" style="color:#3c5899">Dashboard</a> <br>
+                                to see all your Pet Sitting App appointments.</h3>
 
                                 <h3 style="color:#3c5899"><a href="calendar" style="color:#3c5899">Schedule an event</a></h3>
 
