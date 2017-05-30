@@ -47,19 +47,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><img src=<c:url value="/resources/images/logo.png"/> alt="logo"></a>
+            <a class="navbar-brand" href="welcome"><img src=<c:url value="/resources/images/logo.png"/> alt="logo"></a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="/welcome">Home</a></li>
-                <li><a href="about-us.html">About Howl Hugs</a></li>
+                <!-- <li><a href="about-us.html">About Howl Hugs</a></li> -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dashboard <i class="icon-angle-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/createAccount">Update Your Profile</a></li>
-                        <li><a href="/createAccount">Update Your Network</a></li>
+                        <li><a href="createAccount">Update Your Profile</a></li>
+                        <li><a href="createAccount">Update Your Network</a></li>
                         <li class="divider"></li>
-                        <li><a href="/calendar">View Calendar</a></li>
+                        <li><a href="calendar">View Calendar</a></li>
                     </ul>
                 </li>
             </ul>
@@ -99,20 +99,20 @@
 
 <%--Step 1: Pet type dog/cat (radio button)--%>
     I have a:<br>
-    <input type="radio" name="pettype" value="dog" checked> Dog<br>
-    <input type="radio" name="pettype" value="cat"> Cat<br>
-<input type="submit"> <br>
+    <input type="radio" name="pettype" value="dog" checked class="form-control"> Dog<br>
+    <input type="radio" name="pettype" value="cat" class="form-control"> Cat<br>
+<input type="submit" class="form-control"> <br>
         'Submit' before continuing with this questionnaire.<br>
 </form>
 <%--Step 2: Pet's name (text form)--%>
     <form action = "/petProfileSuccess" method ="post">
     My pet's name is:<br>
-    <input type="text" name="petName"><br>
+    <input type="text" name="petName" class="form-control"><br>
 
 <%--Step 3: Pet's breed (dropdown frotm JSON data/PetFinder API)--%>
     My pet is a:<br>
 
-        <select name="testBreeds">
+        <select name="testBreeds" class="form-control">
                 <c:forEach varStatus="b" items ="${breeds}">
                     <!--data we want to pass in-->
                     <option value = "${b.current}">${b.current}</option>
@@ -121,22 +121,22 @@
 
 <%--Step 4: Pet's med's y/n (radio button) IF/ELSE STATEMENT NEEDED--%>
     My pet:<br>
-    <input type="radio" name="medType" value="yes" checked> WILL need medication<br>
-    <input type="radio" name="medType" value="no"> Will NOT need medication<br>
+    <input type="radio" name="medType" value="yes" checked class="form-control"> WILL need medication<br>
+    <input type="radio" name="medType" value="no" class="form-control"> Will NOT need medication<br>
 
 
 <%--Step 5: In home sits (can sitter come to parent's house? y/n (radio button)--%>
     I prefer to:<br>
-    <input type="radio" name="petWatch" value="have my pet watched at my place" >have my pet watched at my place<br>
-    <input type="radio" name="petWatch" value="have my pet watched at the sitter's place">have my pet watched at the sitter's place<br>
+    <input type="radio" name="petWatch" value="have my pet watched at my place" class="form-control">have my pet watched at my place<br>
+    <input type="radio" name="petWatch" value="have my pet watched at the sitter's place" class="form-control">have my pet watched at the sitter's place<br>
 
 <%--Step 6: Pet needs feed/walk/play wild/visit/petting? (checkbox)--%>
     My pet will require:<br>
-    <input type="checkbox" name="activity" value="Feeding">Feeding<br>
-    <input type="checkbox" name="activity" value="Walking" checked>Walking<br>
-    <input type="checkbox" name="activity" value="Cuddling!" checked>Cuddling!<br>
+    <input type="checkbox" name="activity" value="Feeding" class="form-control">Feeding<br>
+    <input type="checkbox" name="activity" value="Walking" checked class="form-control">Walking<br>
+    <input type="checkbox" name="activity" value="Cuddling!" checked class="form-control">Cuddling!<br>
 
-<input type ="submit">
+<input type ="submit" class="form-control">
 </form>
     </div>
 </div>
