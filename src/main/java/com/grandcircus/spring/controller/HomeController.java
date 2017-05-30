@@ -52,11 +52,12 @@ public class HomeController {
 
     //make 3 diff dashboards. parent, sitter, and both.
 
-    //THIS IS FOR DASHBOARD parent PAGE
+    //THIS IS FOR PARENT DASH
     //Step 1: The dash will include cal and sitter network. FEATURE TO ADD(per Kim): HOW TO ADD PEOPLE TO NETWORK.
     //  A) This page will ask if user wants to request a pet sit.
     //  STRETCH  GOAL Update user profile option //
     // STRETCH GOAL, CREATE DROPDOWN FOR DATES WANTING A SIT//
+
 
     //sitterProfileSuccess page should route back to dashboard.
 
