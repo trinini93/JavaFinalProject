@@ -65,14 +65,7 @@
                 <h2>Pet Sitting is so much fun!</h2>
                 <p>Please fill out the form below to register as a Sitters.</p>
             </div>
-            <!-- REDUNDANT NAVIGATION -->
-            <%--<div class="col-sm-6">--%>
-            <%--<ul class="breadcrumb pull-right">--%>
-            <%--<li><a href="index.html">Home</a></li>--%>
-            <%--<li><a href="#">Pages</a></li>--%>
-            <%--<li class="active">Registration</li>--%>
-            <%--</ul>--%>
-            <%--</div>--%>
+
         </div>
     </div>
 </section><!--/#title-->

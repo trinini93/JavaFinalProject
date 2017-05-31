@@ -320,7 +320,6 @@ public class HomeController {
             session.close();
         }
 //        String info = firstName + " " + lastName;
-
         return new ModelAndView("dashboard", "stuff3", sitter);
 
     }
@@ -401,10 +400,8 @@ public class HomeController {
         Configuration configurationObject = new Configuration().configure("hibernate.cfg.xml");
 
         SessionFactory sessionFactory = configurationObject.buildSessionFactory();
-        
 
         Session selectSitters = sessionFactory.openSession();
-
 
         selectSitters.beginTransaction();
 
@@ -443,8 +440,8 @@ public class HomeController {
         }
 
         return new ModelAndView("dashboard", "sitterAdded", sitters);
-    }
 
+    }
 
 }
 
