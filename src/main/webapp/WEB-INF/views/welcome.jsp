@@ -64,7 +64,13 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="/">Home</a></li>
                 <!-- <li><a href="about-us.html">About Howl Hugs</a></li> -->
-                <li class="hover"><a href="dashboard">Dashboard</a></li>
+                <form action="/getStatus" method="post">
+                <li class="hover"><input type="hidden" name="status" id="status"
+                    value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>
+                    <input type="submit" value = "Dashboard"></li>
+             <%--<input type="hidden" name="status" id="status"--%>
+                       <%--value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>--%>
+                </form>
             </ul>
         </div>
     </div>
@@ -279,11 +285,15 @@
             </div><!--/.col-md-3-->
 
 
-            <form action="/getStatus" method="post">
-                <input type="hidden" name="status" id="status"
-                       value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>
-                <input type="submit" value="Dashboard">
-            </form>
+            <%--<form action="/getStatus" method="post">--%>
+                <%--<input type="hidden" name="status" id="status"--%>
+                       <%--value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>--%>
+                <%--<!--Add buttons to initiate auth sequence and sign out-->--%>
+                <%--<button id="authorize-button" style="display: none;" name="status"--%>
+                        <%--value="gapi.auth2.getAuthInstance().currentUser.get().getId()">Authorize</button>--%>
+                <%--<button id="signout-button" style="display: none;">Sign Out</button>--%>
+                <%--&lt;%&ndash;<input type="submit" value="Dashboard">&ndash;%&gt;--%>
+            <%--</form>--%>
 
             <pre id="content"></pre>
 
