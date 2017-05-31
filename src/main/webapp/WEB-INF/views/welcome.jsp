@@ -10,12 +10,13 @@
 
 <html lang="en">
 <head>
+    <%--search engines look for meta info to categorize site. it also helps ipad/iphones understand how they should be viewed--%>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Welcome to Fur Sitters!</title>
 
-
+<%--These links are all CSS for styling of page, done via bootstrap--%>
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/font-awesome.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/prettyPhoto.css" />" rel="stylesheet">
@@ -40,6 +41,7 @@
 </head>
 <body>
 
+<%--dictactes main nav at top of page--%>
 <header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
     <div class="container">
         <div class="navbar-header">
@@ -67,6 +69,8 @@
         </div>
     </div>
 </header><!--/header-->
+
+<%--This has to do with big picture--%>
 <!-- Begin background slider image with headline and link to Registration and Login -->
 <section id="main-slider" class="no-margin">
     <div class="carousel slide wet-asphalt">
@@ -86,13 +90,15 @@
                                     for your pets while you are away.</h2>
                                 <h3 class="animation animated-item-2"><br><a href="createAccount" style="color:#3c5899">Click <strong>Register</strong> to sign up with Fur Sitters!</a>
                                 </h3><br><br>
-                                <!-- NEED LINK TO LOGIN HERE  -->
+                                <!-- this is the google login/authorization button to!-->
                                 <h3 style="color:#3c5899">Click <strong>'Authorize'</strong> if you have a<br>Google Account:</h3>
                                 <div class="col-xs-2">
 
+                                    <%--this ID button talks to script of bottom of page from google/google API--%>
                                     <button id="authorize-button" style="display: none;" class="form-control">
                                         Authorize
                                     </button>
+
                                     <button id="signout-button" style="display: none;" class="form-control">Sign Out
                                     </button>
                                     <pre id="content"></pre>
@@ -117,7 +123,7 @@
             </div>
         </div><!--/.item-->
 
-
+<%--carosoul pics that still don't work. removing--%>
         <div class="item" style="background-image: url( '/resources/images/slider/bg2.jpg' )">
             <div class="container">
                 <div class="row">
@@ -382,6 +388,7 @@
 <script type="text/javascript">
 
     // Client ID and API key from the Developer Console
+    // credentials to sign into google
     var CLIENT_ID = '802805404885-h8ffds7tamadqlv1pqduuf4s7emn5c24.apps.googleusercontent.com';
 
     // Array of API discovery doc URLs for APIs used by the quickstart
@@ -389,13 +396,14 @@
 
     // Authorization scopes required by the API; multiple scopes can be
     // included, separated by spaces.
+    //at the end, it allows you to read cal only
     var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 
     var authorizeButton = document.getElementById('authorize-button');
     var signoutButton = document.getElementById('signout-button');
 
     /**
-     *  On load, called to load the auth2 library and API client library.
+     *  On load, called to load the auth2 library and API client library. (combines)
      */
     function handleClientLoad() {
         gapi.load('client:auth2', initClient);
@@ -468,6 +476,8 @@
      * the authorized user's calendar. If no events are found an
      * appropriate message is printed.
      */
+
+//    DELETE THIS NO LONGER NEEDED
     function listUpcomingEvents() {
         gapi.client.calendar.events.list({
             'calendarId': 'primary',
@@ -498,6 +508,7 @@
 </script>
 
 
+<%--this script is calling out google api--%>
 <script async defer src="https://apis.google.com/js/api.js"
         onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">

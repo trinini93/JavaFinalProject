@@ -278,6 +278,7 @@ public class HomeController {
         parentPet.setPetWatch(petWatch);
         parentPet.setActivity(activity);
 
+        //design pattern
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 
         Session session = factory.openSession();

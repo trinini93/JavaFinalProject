@@ -64,7 +64,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <h2>Howl Hugs Member Registration</h2>
+                <h2>Fur Sitters Member Registration</h2>
                 <p>As a registered member, you may build a network of memeber-friends <br>
                     to schedule Pet Sittings with. You can register as a Pet Parent, or a Sitter, or Both.</p>
             </div>
@@ -81,6 +81,8 @@
 </section><!--/#title-->
 <div class="form-group center_div">
     ${googleID} <br>
+
+        <%--This is where we talk to db. Grabbing user info and sending it to DB with this form--%>
         <form name="userInfo" method="GET" action="/finishAccount" onsubmit="return validateForm();">
             <h2>Fill out form completely to join the <br>Howl Hugs Pet Sitter Web App</h2>
             <table>
