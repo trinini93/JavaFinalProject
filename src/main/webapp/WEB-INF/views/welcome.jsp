@@ -172,7 +172,7 @@
                         </tr><br><br>
                         <tr>
                             <td>
-                                <input type="hidden" name="status" id="status" value=${googleID}/>
+                                <input type="hidden" name="status" id="status2" value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>
 
                                 <input type="submit" value="Submit" class="form-control" />
                                 <%--<input id="authorize-button" type="submit" value="Submit" class="form-control" />--%>
@@ -440,6 +440,7 @@
             signoutButton.style.display = 'block';
             console.log(gapi.auth2.getAuthInstance().currentUser.get().getId());
             document.getElementById('status').value = gapi.auth2.getAuthInstance().currentUser.get().getId();
+            document.getElementById('status2').value = gapi.auth2.getAuthInstance().currentUser.get().getId();
         } else {
             authorizeButton.style.display = 'block';
             signoutButton.style.display = 'none';
