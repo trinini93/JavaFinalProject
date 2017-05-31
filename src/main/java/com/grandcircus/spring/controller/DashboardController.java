@@ -39,10 +39,10 @@ public class DashboardController {
 
         u.add(Restrictions.eq("googleNum", id));
 
-        List result = u.list();
+        UserProfileEntity result = (UserProfileEntity) u.uniqueResult();
 
 
-        model.addAttribute("something", result);
+        model.addAttribute("something", result.getFirstName());
 
         return "dashboard";
     }
