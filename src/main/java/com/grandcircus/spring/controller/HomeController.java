@@ -429,7 +429,7 @@ public class HomeController {
         Criteria c = selectSitters.createCriteria(SittersEntity.class); //pulling the entire list of customers from the database
 
         // create an entire arraylist to capture complete database instead of only one item
-        // also the POJO                         casting the 'list' to the arrayList of the type CustomerEntity. CustomerEntity is the Object.
+        // also the POJO/casting the 'list' to the arrayList of the type CustomerEntity. CustomerEntity is the Object.
         return (ArrayList<SittersEntity>) c.list();
     }
 
