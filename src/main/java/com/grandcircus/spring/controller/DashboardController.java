@@ -7,6 +7,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
@@ -23,13 +25,13 @@ public class DashboardController {
 //        return new ModelAndView("dashboard", "hello", "helloWorld!");
 //    }
 
-//    @RequestMapping("/getStatus")
-//    public String getStatus(Model model, @RequestParam("status") String id)
-//    {
-//        model.addAttribute("something", id);
-//
-//        return "dashboard";
-//    }
+    @RequestMapping("/getStatus")
+    public String getStatus(Model model, @RequestParam("status") String id)
+    {
+        model.addAttribute("googleID", id);
+
+        return "createAccount";
+    }
 
 //    @RequestMapping("/dashboard")
 //    public String listUsers(Model model, @RequestParam("status") String id)

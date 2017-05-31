@@ -57,7 +57,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><img src=<c:url value="/resources/images/logo.png"/> alt="logo"></a>
+            <a class="navbar-brand" href="/"><img src=
+                                                  <c:url value="/resources/images/logo.png"/> alt="logo"></a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -92,9 +93,12 @@
                                 <h3 style="color:#3c5899">Login here if you have a Google Account:</h3>
                                 <div class="col-xs-2">
 
-                                <button id="authorize-button" style="display: none;" class="form-control">Authorize</button>
-                                <button id="signout-button" style="display: none;" class="form-control">Sign Out</button>
-                                <pre id="content"></pre>
+                                    <button id="authorize-button" style="display: none;" class="form-control">
+                                        Authorize
+                                    </button>
+                                    <button id="signout-button" style="display: none;" class="form-control">Sign Out
+                                    </button>
+                                    <pre id="content"></pre>
 
                                 </div>
                                 <br>
@@ -125,7 +129,7 @@
                             <h2 class="boxed animation animated-item-1">Because your Cousin Loves your Pet like a
                                 Brother,</h2>
                             <p class="boxed animation animated-item-2">Howl Hugs helps you schedule a Pet Sitting visit
-                                that makes everyone happy.</p>
+                            that makes everyone happy.</p>
                             <br>
                             <a class="btn btn-md animation animated-item-3" href="createAccount">Learn More</a>
                         </div>
@@ -174,7 +178,7 @@
                     <div class="media-body">
                         <h3 class="media-heading">Twitter Marketing</h3>
                         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                            Vestibulum tortor quam, feugiat vitae.</p>
+                        Vestibulum tortor quam, feugiat vitae.</p>
                     </div>
                 </div>
             </div><!--/.col-md-4-->
@@ -186,7 +190,7 @@
                     <div class="media-body">
                         <h3 class="media-heading">Facebook Marketing</h3>
                         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                            Vestibulum tortor quam, feugiat vitae.</p>
+                        Vestibulum tortor quam, feugiat vitae.</p>
                     </div>
                 </div>
             </div><!--/.col-md-4-->
@@ -198,7 +202,7 @@
                     <div class="media-body">
                         <h3 class="media-heading">Google Plus Marketing</h3>
                         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                            Vestibulum tortor quam, feugiat vitae.</p>
+                        Vestibulum tortor quam, feugiat vitae.</p>
                     </div>
                 </div>
             </div><!--/.col-md-4-->
@@ -222,27 +226,27 @@
                     <div class="col-md-6">
                         <blockquote>
                             <p>Besides being a ‘feel-good’ app, this is a great project to showcase all the skills we
-                                now have in Java, MySQL, JDBC, SpringMVC, Hibernate, Javascript and API integration. The
-                                Howl Hugs Pet Sitter Web App fills the need to schedule companionship for family pets
-                                while the owners are away – a positive alternative to kennel boarding, or leaving your
-                                ‘independent’ cat alone for the weekend. </p>
+                            now have in Java, MySQL, JDBC, SpringMVC, Hibernate, Javascript and API integration. The
+                            Howl Hugs Pet Sitter Web App fills the need to schedule companionship for family pets
+                            while the owners are away – a positive alternative to kennel boarding, or leaving your
+                            ‘independent’ cat alone for the weekend. </p>
                             <small>Lydia Latocki, <cite title="Java Developer">Java Developer</cite></small>
                         </blockquote>
                         <blockquote>
                             <p>Users set up a Social Network of Sitters and Pet Parents to schedule Pet Sitting. To
-                                begin, Users create accounts with profiles held in MySQL on Amazon Web Services that are
-                                validated through Spring MVC validation. Pets are included in Parent profiles. Type of
-                                pet are defined with the help of a drop down menu using the Purina Breed API that
-                                conveniently lists all dog and cat breeds. </p>
+                            begin, Users create accounts with profiles held in MySQL on Amazon Web Services that are
+                            validated through Spring MVC validation. Pets are included in Parent profiles. Type of
+                            pet are defined with the help of a drop down menu using the Purina Breed API that
+                            conveniently lists all dog and cat breeds. </p>
                             <small>Trina Chowdhury, <cite title="Java Developer">Java Developer</cite></small>
                         </blockquote>
                     </div>
                     <div class="col-md-6">
                         <blockquote>
                             <p>Parents invite friends to join the app and link to their shared Howl Hugs Network.
-                                Sitters profiles include type of animal Sitters are willing to companion. Users can be
-                                both Sitters and Parents, or update their profile at anytime if things change. Users can
-                                view their own Pet Network of friends to schedule Pet Sitting.</p>
+                            Sitters profiles include type of animal Sitters are willing to companion. Users can be
+                            both Sitters and Parents, or update their profile at anytime if things change. Users can
+                            view their own Pet Network of friends to schedule Pet Sitting.</p>
                             <small>Jeremy Villa, <cite title="Java Developer">Java Developer</cite></small>
                         </blockquote>
                         <%--<blockquote>--%>
@@ -275,7 +279,7 @@
             </div><!--/.col-md-3-->
 
 
-            <form action="/dashboard" method="post">
+            <form action="/getStatus" method="post">
                 <input type="hidden" name="status" id="status"
                        value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>
                 <input type="submit" value="Dashboard">
@@ -370,8 +374,8 @@
 </section><!--/#bottom-->
 
 <%--<form action="/dashboard" method="post">--%>
-    <%--<input type="hidden" name="status" id="status" value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>--%>
-    <%--<input type="submit" value = "Dashboard">--%>
+<%--<input type="hidden" name="status" id="status" value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>--%>
+<%--<input type="submit" value = "Dashboard">--%>
 <%--</form>--%>
 
 
@@ -491,13 +495,14 @@
             }
         });
     }
- </script>
+
+</script>
+
 
 <script async defer src="https://apis.google.com/js/api.js"
         onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
 </script>
 
-
 </body>
-</html>
+    </html>
