@@ -26,13 +26,13 @@ public class DashboardController {
 //        return new ModelAndView("dashboard", "hello", "helloWorld!");
 //    }
 
-//    @RequestMapping("/getStatus")
-//    public String getStatus(Model model, @RequestParam("status") String id)
-//    {
-//        model.addAttribute("something", id);
-//
-//        return "dashboard";
-//    }
+    @RequestMapping("/getStatus")
+    public String getStatus(Model model, @RequestParam("status") String id)
+    {
+        model.addAttribute("googleID", id);
+
+        return "createAccount";
+    }
 
 //    @RequestMapping("/dashboard")
 //    public String listUsers(Model model, @RequestParam("status") String id)
