@@ -34,17 +34,17 @@ public class DashboardController {
 //        return "dashboard";
 //    }
 
-    @RequestMapping("/dashboard")
-    public String listUsers(Model model, @RequestParam("status") String id)
-    {
-        model.addAttribute("something", id);
-        ArrayList<UserProfileEntity> userProfile = search(id);
-
-        model.addAttribute ("firstName", userProfile.getFirstName());
-        model.addAttribute("");
-
-        return "/dashboard";
-    }
+//    @RequestMapping("/dashboard")
+//    public String listUsers(Model model, @RequestParam("status") String id)
+//    {
+//        model.addAttribute("something", id);
+//        ArrayList<UserProfileEntity> userProfile = search(id);
+//
+////        model.addAttribute ("firstName", userProfile.getFirstName());
+////        model.addAttribute("");
+//
+//        return "/dashboard";
+//    }
 
 //    public ArrayList<UserProfileEntity> getUserProfileEntity() {
 //        // importing this class, you also need to chain the method of configure to properly bootstrap hibernate. This adds the configuration and mapping of the resources

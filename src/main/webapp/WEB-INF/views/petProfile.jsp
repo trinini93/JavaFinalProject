@@ -78,12 +78,7 @@
     </div>
 </section><!--/#title-->
 
-
-
-<<<<<<< HEAD
 Please fill out the form below to register your pet with Pet Sitters.
-=======
->>>>>>> 3cd5496eefa7436fbde8820ddf78d6b9f1c5741d
 
 <%--ACTION is empty until we figure out which page this is going to--%>
 <div class="form-group center_div">

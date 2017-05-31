@@ -11,6 +11,12 @@
     <title>petProfileSuccess</title>
 </head>
 <body>
-${stuff2}
+Thanks for registering your pet!
+
+Where do you want to go now?
+
+Home <%--link--%>
+
+Dashboard <%--link--%>
 </body>
 </html>
