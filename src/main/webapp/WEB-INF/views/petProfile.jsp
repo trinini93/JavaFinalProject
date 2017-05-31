@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: trina2
@@ -88,8 +87,12 @@
 
 <%--Step 1: Pet type dog/cat (radio button)--%>
     I have a:<br>
-    <input type="radio" name="pettype" value="dog" checked class="form-control"> Dog<br>
-    <input type="radio" name="pettype" value="cat" class="form-control"> Cat<br>
+        <label class="radio-inline">
+    <input type="radio" name="pettype" value="dog" checked class="form-control"> Dog
+        </label>
+        <label class="radio-inline">
+    <input type="radio" name="pettype" value="cat" class="form-control"> Cat
+        </label>
 <input type="submit" class="form-control"> <br>
         'Submit' before continuing with this questionnaire.<br>
 </form>

@@ -11,6 +11,12 @@
     <title>sitterProfileSuccess</title>
 </head>
 <body>
-${stuff3}
+Thanks for registering as a sitter!
+
+Where do you want to go now?
+
+Home <%--link--%>
+
+Dashboard <%--link--%>
 </body>
 </html>

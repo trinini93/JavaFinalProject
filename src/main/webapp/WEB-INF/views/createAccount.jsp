@@ -122,7 +122,7 @@
                     </tr><br><br>
                     <tr>
                         <td>
-                            <input type="hidden" name="status" id="status" value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>
+                            <input type="hidden" name="status" id="status" value="${googleID}"/>
 
                             <input id="authorize-button" type="submit" value="Submit" class="form-control" />
 
