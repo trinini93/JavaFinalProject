@@ -381,7 +381,9 @@ public class HomeController {
         Integer UserID = null;
         try {
             tx = session.beginTransaction();
+            //THIS IS WHERE WE ARE SAVING TO DB. USER IS OBJECT CREATED ABOVE. THIS IS SAVING IT
             session.save(user);
+            //.COMMIT MAKING SURE THAT IT ACTUALLY GOES THRU TRANSACTION AND SAVES IT
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) tx.rollback();
@@ -412,12 +414,15 @@ public class HomeController {
 
     @RequestMapping("/addASitter")
     public ModelAndView addASitter (@RequestParam("sName") String sName,
-                                    @RequestParam("sEmail") String sEmail) {
+                                    @RequestParam("sEmail") String sEmail,
+                                    @RequestParam("status") String status) {
 
         AddSitterEntity sitters = new AddSitterEntity();
 
         sitters.setSitterName(sName);
         sitters.setSitterEmail(sEmail);
+        sitters.setGoogIdParent(status);
+
 
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 
@@ -434,15 +439,9 @@ public class HomeController {
             session.close();
         }
 
+        return new ModelAndView("dashboard", "sitterAdded", sitters);
 
-
-
-
-
-
-        return new ModelAndView("dashboard", "sitterAdded", "");
     }
-
 
 }
 

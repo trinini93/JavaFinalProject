@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Admin on 5/29/2017.
@@ -35,11 +36,13 @@ public class DashboardController {
         session.beginTransaction();
         Criteria u = session.createCriteria(UserProfileEntity.class);
 
-        // adds restrictions to filter to match the city entered into the form on the JSP page
-        u.add(Restrictions.like("id", "%" + id + "%"));
-        
 
-        model.addAttribute("something", u);
+        u.add(Restrictions.eq("googleNum", id));
+
+        List result = u.list();
+
+
+        model.addAttribute("something", result);
 
         return "dashboard";
     }

@@ -71,28 +71,112 @@ as
 ${something}
 <br>
 <p>Select an email from your Network of Sitters to request an appointment for sitting.</p><br>
-<c:forEach items="${sitterEmail}" var ="sEmail"> <br>
+<%--<c:forEach items="${sitterEmail}" var ="sEmail"> <br>--%>
 
-    <p>If you would like to add a Sitter to your network, please fill out the form below.</p>
+    <%--<p>If you would like to add a Sitter to your network, please fill out the form below.</p>--%>
 
 
-    <a href="mailto:${sEmail.sitterEmail}?subject=Hello,%20Can%20you%20sit%3F&body=Hello,%0D%0DCan%20you%20sit%20for%20my%20pet%20on:">${sEmail.sitterEmail}</a><br>
-</c:forEach>
+    <%--<a href="mailto:${sEmail.sitterEmail}?subject=Hello,%20Can%20you%20sit%3F&body=Hello,%0D%0DCan%20you%20sit%20for%20my%20pet%20on:">${sEmail.sitterEmail}</a><br>--%>
+<%--</c:forEach>--%>
+
+    ${sitterAdded.sitterName}
+    ${sitterAdded.sitterEmail}
 
 <br>
 <br>
+
+    <p>Click below to add a sitter to your Network.</p>
+    <form action="addASitter" method="post">
+        Sitter name: <input type="text" name="sName"><br>
+        Sitter email: <input type="text" name="sEmail"><br>
+        <input type="hidden" name="status" id="status"><br>
+        <input type="submit" value="Submit">
+    </form> <br>
+
 <%--this form will add a sitter to parent network.--%>
+<script>
 
-<p>Click below to add a sitter to your Network.</p>
-<form action="addASitter" method="post">
-    Sitter name: <input type="text" name="sName"><br>
-    Sitter email: <input type="text" name="sEmail"><br>
-    <input type="submit" value="Submit">
-</form> <br>
+    // Client ID and API key from the Developer Console
+    // credentials to sign into google
+    var CLIENT_ID = '802805404885-h8ffds7tamadqlv1pqduuf4s7emn5c24.apps.googleusercontent.com';
+
+    // Array of API discovery doc URLs for APIs used by the quickstart
+    var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+
+    // Authorization scopes required by the API; multiple scopes can be
+    // included, separated by spaces.
+    //at the end, it allows you to read cal only
+    var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
+
+    /**
+     *  On load, called to load the auth2 library and API client library. (combines)
+     */
+    function handleClientLoad() {
+        gapi.load('client:auth2', initClient);
+    }
+
+    /**
+     *  Initializes the API client library and sets up sign-in state
+     *  listeners.
+     */
+    function initClient() {
+        gapi.client.init({
+            discoveryDocs: DISCOVERY_DOCS,
+            clientId: CLIENT_ID,
+            scope: SCOPES
+        }).then(function () {
+            // Listen for signin state changes.
+            gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+            // Handle the initial sign-in state.
+            updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+//            authorizeButton.onclick = handleAuthClick;
+//            signoutButton.onclick = handleSignoutClick;
+        });
+    }
+
+    /**
+     *  Called when the sned in status changes, to update the UI
+     *  appropriately. After a sign-in, the API is called.
+     */
+    function updateSigninStatus(isSignedIn) {
+        if (isSignedIn) {
+//            authorizeButton.style.display = 'none';
+//            signoutButton.style.display = 'block';
+            console.log(gapi.auth2.getAuthInstance().currentUser.get().getId());
+            document.getElementById('status').value = gapi.auth2.getAuthInstance().currentUser.get().getId();
+        } else {
+//            authorizeButton.style.display = 'block';
+//            signoutButton.style.display = 'none';
+        }
+    }
+
+    /**
+     *  Sign in the user upon button click.
+     */
+    function handleAuthClick(event) {
+        gapi.auth2.getAuthInstance().signIn();
+    }
+
+    /**
+     *  Sign out the user upon button click.
+     */
+    function handleSignoutClick(event) {
+        gapi.auth2.getAuthInstance().signOut();
+    }
+
+
+</script>
 
 <iframe src="
 https://calendar.google.com/calendar/embed?src=ci0im9019ojt8m3dmkmlbc68qo@group.calendar.google.com" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
 </div>
+
+<script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+
 </body>
 </html>

@@ -14,5 +14,8 @@
         <property name="sitterEmail">
             <column name="SitterEmail" sql-type="varchar(45)" length="45"/>
         </property>
+        <property name="googIdParent">
+            <column name="googIDParent" sql-type="varchar(255)" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>

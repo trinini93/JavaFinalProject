@@ -11,6 +11,7 @@ public class AddSitterEntity {
     private int idAddSitter;
     private String sitterName;
     private String sitterEmail;
+    private String googIdParent;
 
     @Id
     @Column(name = "idAddSitter", nullable = false)
@@ -62,5 +63,15 @@ public class AddSitterEntity {
         result = 31 * result + (sitterName != null ? sitterName.hashCode() : 0);
         result = 31 * result + (sitterEmail != null ? sitterEmail.hashCode() : 0);
         return result;
+    }
+
+    @Basic
+    @Column(name = "googIDParent", nullable = true, length = 255)
+    public String getGoogIdParent() {
+        return googIdParent;
+    }
+
+    public void setGoogIdParent(String googIdParent) {
+        this.googIdParent = googIdParent;
     }
 }
