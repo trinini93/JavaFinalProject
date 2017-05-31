@@ -293,7 +293,7 @@ public class HomeController {
         } finally {
             session.close();
         }
-        return new ModelAndView("petProfileSuccess", "stuff2", petName + " " + testBreeds + " " + medType + petWatch + activity
+        return new ModelAndView("dashboard", "stuff2", petName + " " + testBreeds + " " + medType + petWatch + activity
         );
     }
 
@@ -341,7 +341,7 @@ public class HomeController {
         }
 //        String info = firstName + " " + lastName;
 
-        return new ModelAndView("sitterProfileSuccess", "stuff3", sitter);
+        return new ModelAndView("dashboard", "stuff3", sitter);
 
     }
 
