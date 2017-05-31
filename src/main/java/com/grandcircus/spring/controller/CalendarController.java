@@ -20,6 +20,38 @@ import java.util.ArrayList;
 @Controller
 public class  CalendarController {
 
+// controller to result all sitters related to logged-in-user pulled by ref to googIDParent
+    //    @RequestMapping("seeSitterNetwork")
+//    public ModelAndView listNetworkMatch(@RequestParam("googIDParent") String googIDParent){
+//        System.out.print(parentEmail);
+//        //we must first create a session so that we can interact with the database
+//        Configuration configurationObject = new Configuration().configure("hibernate.cfg.xml");
+//
+//        SessionFactory sessionFactory = configurationObject.buildSessionFactory();
+//
+//        Session friendSession = sessionFactory.openSession();
+//
+//        // opening a transaction
+//        Transaction myNetwork = friendSession.beginTransaction();
+//
+//        //create a criteria for the entity type you'll be searching through
+//       Criteria myNetwkFriends = friendSession.createCriteria(AddSitterEntity.class);//.setProjection(Projections.projectionList().add( Projections.distinct(Projections.property("sitterEmail"))));
+//        //List list = friendSession.createCriteria(AddSitterEntity.class).add(Restrictions.eq("googIdParent", googIdParent)).setProjection(Projections.projectionList().add(Projections.distinct(Projections.property("sitterEmail")))).list();
+//        myNetwkFriends.add(Restrictions.eq("googIdParent",    googIdParent));
+//
+//        ArrayList<AddSitterEntity> list = (ArrayList<AddSitterEntity>) myNetwkFriends.list(); // get the list
+//        friendSession.getTransaction().commit(); // telling transaction to go
+//
+//        //creates a criteria requirement, and says if an item in column "sitterEmail" matches the family of "googIDParent", to pull a single result. Use .list() for multiple results.
+////        for(AddSitterEntity p: list){
+////            System.out.println(p.getSitterEmail());
+////        }
+//        // passes the family object to the jsp page as an EL tag
+//        return new ModelAndView("dashboard", "sitterEmail", list);
+//
+//    }
+
+
 
 //    @RequestMapping("dashboard")
 //    public ModelAndView listNetworkMatch(@RequestParam("parentName") String parentEmail){
