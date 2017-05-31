@@ -28,9 +28,20 @@ public class DashboardController {
     @RequestMapping("/getStatus")
     public String getStatus(Model model, @RequestParam("status") String id)
     {
-        model.addAttribute("googleID", id);
+        Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
+        SessionFactory sessionFact = cfg.buildSessionFactory();
+        Session session = sessionFact.openSession();
 
-        return "createAccount";
+        session.beginTransaction();
+        Criteria u = session.createCriteria(UserProfileEntity.class);
+
+        // adds restrictions to filter to match the city entered into the form on the JSP page
+        u.add(Restrictions.like("id", "%" + id + "%"));
+        
+
+        model.addAttribute("something", u);
+
+        return "dashboard";
     }
 
 //    @RequestMapping("/dashboard")

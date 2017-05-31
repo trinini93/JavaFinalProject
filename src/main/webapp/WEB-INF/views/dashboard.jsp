@@ -67,6 +67,10 @@
 
 <h1>Welcome, ${firstName}!</h1>
 
+${googleID}
+
+as
+
 ${something}
 <br>
 <p>Select an email from your Network of Sitters to request an appointment for sitting.</p><br>
