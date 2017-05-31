@@ -51,7 +51,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><img src=<c:url value="/resources/images/logo.png"/> alt="logo"></a>
+            <a class="navbar-brand" href="/"><img src=<c:url value="/resources/images/fursitters.png"/> alt="logo"></a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
