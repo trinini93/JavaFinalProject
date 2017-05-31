@@ -93,6 +93,7 @@
         <label class="radio-inline">
     <input type="radio" name="pettype" value="cat" class="form-control"> Cat
         </label>
+        <br>
 <input type="submit" class="form-control"> <br>
         'Submit' before continuing with this questionnaire.<br>
 </form>

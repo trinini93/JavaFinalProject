@@ -122,10 +122,10 @@
                     </tr><br><br>
                     <tr>
                         <td>
-                            <input type="hidden" name="status" id="status" value="${googleID}"/>
+                            <input type="hidden" name="status" id="status" value=${googleID}/>
 
-                            <input id="authorize-button" type="submit" value="Submit" class="form-control" />
-
+                            <%--<input id="authorize-button" type="submit" value="Submit" class="form-control" />--%>
+                            <input type="submit" value="Submit" class="form-control" />
                             <%--<form action="/dashboard" method="post">--%>
                                 <%--<input type="hidden" name="status" id="status" value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>--%>
                                 <%--<input type="submit" value = "Dashboard">--%>
