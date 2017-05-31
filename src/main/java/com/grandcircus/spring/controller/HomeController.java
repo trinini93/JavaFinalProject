@@ -402,7 +402,9 @@ public class HomeController {
         Integer UserID = null;
         try {
             tx = session.beginTransaction();
+            //THIS IS WHERE WE ARE SAVING TO DB. USER IS OBJECT CREATED ABOVE. THIS IS SAVING IT
             session.save(user);
+            //.COMMIT MAKING SURE THAT IT ACTUALLY GOES THRU TRANSACTION AND SAVES IT
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) tx.rollback();
