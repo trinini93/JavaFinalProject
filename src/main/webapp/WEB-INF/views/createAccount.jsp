@@ -121,13 +121,15 @@
                         <td>Are you a Sitter: <input type="radio" name="sitter" value="1" checked>Yes     <input type="radio" name="sitter" value="0">No</td>
                     </tr><br><br>
                     <tr>
-                        <td><div class="col-xs-2">
+                        <td>
+                            <input type="hidden" name="status" id="status" value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>
+
                             <input id="authorize-button" type="submit" value="Submit" class="form-control" />
-                            </div>
-                            <form action="/dashboard" method="post">
-                                <input type="hidden" name="status" id="status" value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>
-                                <input type="submit" value = "Dashboard">
-                            </form>
+
+                            <%--<form action="/dashboard" method="post">--%>
+                                <%--<input type="hidden" name="status" id="status" value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>--%>
+                                <%--<input type="submit" value = "Dashboard">--%>
+                            <%--</form>--%>
 
                         </td>
                     </tr>
@@ -135,31 +137,32 @@
             </table>
         </form>
 </div>
-<script>
-    function validateForm() {
-        var userEmail = document.forms["userInfo"]["email"].value;
 
-        var password = document.forms["userInfo"]["password"].value;
-        var repeatPassword = document.forms["userInfo"]["repeatPassword"].value;
-        if (email === "" || firstName === "" || lastName === "" || address === "" || city === "" || state === "" || zip === "" || passWord === "" || repeatPassword === "" || parent === "" || sitter === "" ) {
-            alert("Please complete all fields to join the Coffee Club!");
-            return false;
-        }
-        if (!userEmail.includes("@")) {
-            alert("Please enter a valid email!");
-            return false;
-        }
-        if (!userEmail.includes(".")) {
-            alert("Please enter a valid email!");
-            return false;
-        }
-        if (password !== repeatPassword) {
-            alert("The passwords entered do not match!");
-            return false;
-        }
-        return true;
-    }
-</script>
+<%--<script>--%>
+    <%--function validateForm() {--%>
+        <%--var userEmail = document.forms["userInfo"]["email"].value;--%>
+
+        <%--var password = document.forms["userInfo"]["password"].value;--%>
+        <%--var repeatPassword = document.forms["userInfo"]["repeatPassword"].value;--%>
+        <%--if (email === "" || firstName === "" || lastName === "" || address === "" || city === "" || state === "" || zip === "" || passWord === "" || repeatPassword === "" || parent === "" || sitter === "" ) {--%>
+            <%--alert("Please complete all fields to join the Coffee Club!");--%>
+            <%--return false;--%>
+        <%--}--%>
+        <%--if (!userEmail.includes("@")) {--%>
+            <%--alert("Please enter a valid email!");--%>
+            <%--return false;--%>
+        <%--}--%>
+        <%--if (!userEmail.includes(".")) {--%>
+            <%--alert("Please enter a valid email!");--%>
+            <%--return false;--%>
+        <%--}--%>
+        <%--if (password !== repeatPassword) {--%>
+            <%--alert("The passwords entered do not match!");--%>
+            <%--return false;--%>
+        <%--}--%>
+        <%--return true;--%>
+    <%--}--%>
+<%--</script>--%>
 
 
 <!-- Google Login script -->
@@ -283,14 +286,6 @@
         onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
 </script>
-
-When you have logged into your Google Account, <br>
-View the Pet Sitter<br>
-<a href="calendar?parentName=msepa5@sdcglobal.net">Calendar</a> <br>
-    to see all the Pet Sitting App appointments.
-
-
-<!-- <a href="calendar">Schedule an event</a> -->
 
 </body>
 </html>

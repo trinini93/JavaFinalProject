@@ -4,7 +4,6 @@ package com.grandcircus.spring.controller;
 import com.grandcircus.spring.models.ParentPetFormEntity;
 
 import com.grandcircus.spring.models.SittersEntity;
-import com.grandcircus.spring.models.UserProfileEntity;
 
 import com.grandcircus.spring.models.*;
 
@@ -15,6 +14,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,6 +33,7 @@ import java.security.NoSuchAlgorithmException;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 
 import java.util.ArrayList;
 
@@ -363,6 +364,7 @@ public class HomeController {
                                          @RequestParam("repeatPassword") String repeatPassword,
                                          @RequestParam("parent") byte parent,
                                          @RequestParam("sitter") byte sitter,
+                                         @RequestParam("status") String googleID,
                                          Model model) {
         UserProfileEntity user = new UserProfileEntity();
         user.setEmail(email);
@@ -377,6 +379,7 @@ public class HomeController {
         user.setRepeatPassword(repeatPassword);
         user.setParent(parent);
         user.setSitter(sitter);
+        user.setGoogleNum(googleID);
 
         model.addAttribute("email", user.getEmail());
         model.addAttribute("firstName", user.getFirstName());
@@ -415,8 +418,10 @@ public class HomeController {
         Configuration configurationObject = new Configuration().configure("hibernate.cfg.xml");
 
         SessionFactory sessionFactory = configurationObject.buildSessionFactory();
+        
 
         Session selectSitters = sessionFactory.openSession();
+
 
         selectSitters.beginTransaction();
 

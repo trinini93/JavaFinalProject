@@ -1,3 +1,6 @@
+
+
+
 <%--
   Created by IntelliJ IDEA.
   User: Pro
@@ -60,6 +63,11 @@
     </div>
 </header><!--/header-->
 <h2>Your Howl Hug Dashboard</h2>
+
+
+<h1>Welcome, ${firstName}!</h1>
+
+${something}
 <br>
 <p>Select an email from your Network of Sitters to request an appointment for sitting.</p><br>
 <c:forEach items="${sitterEmail}" var ="sEmail"> <br>
@@ -83,6 +91,7 @@
 
 <iframe src="
 https://calendar.google.com/calendar/embed?src=ci0im9019ojt8m3dmkmlbc68qo@group.calendar.google.com" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
 
 </body>
 </html>

@@ -21,7 +21,7 @@ public class UserProfileEntity {
     private String repeatPassword;
     private byte parent;
     private byte sitter;
-    private Integer googleNum;
+    private String googleNum;
 
     @Id
     @Column(name = "userID", nullable = false)
@@ -154,12 +154,12 @@ public class UserProfileEntity {
     }
 
     @Basic
-    @Column(name = "googleNum", nullable = true)
-    public Integer getGoogleNum() {
+    @Column(name = "googleNum", nullable = true, length = 30)
+    public String getGoogleNum() {
         return googleNum;
     }
 
-    public void setGoogleNum(Integer googleNum) {
+    public void setGoogleNum(String googleNum) {
         this.googleNum = googleNum;
     }
 

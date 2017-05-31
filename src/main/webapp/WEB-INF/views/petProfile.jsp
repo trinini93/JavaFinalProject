@@ -64,7 +64,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <h2>Welcome to Pet Sitters!</h2>
-                <p>Please fill out the form below to register your pet  with Pet Sitters.</p>
+                <p>Please fill out the form below to register your pet  with Pet Sitters. </p>
             </div>
             <!-- REDUNDANT NAVIGATION -->
             <%--<div class="col-sm-6">--%>
@@ -77,9 +77,6 @@
         </div>
     </div>
 </section><!--/#title-->
-
-
-
 
 <%--ACTION is empty until we figure out which page this is going to--%>
 <div class="form-group center_div">
