@@ -11,11 +11,12 @@
     <title>sitterProfileSuccess</title>
 </head>
 <body>
-Thanks for registering as a sitter!
+<h2>Thanks for registering as a sitter!</h2>
 
-Where do you want to go now?
+<h2>Where do you want to go now?</h2><br>
 
-Home <%--link--%>
+<%--link--%>
+<a href="/">Home</a>
 
 Dashboard <%--link--%>
 </body>
