@@ -62,10 +62,10 @@
         </div>
     </div>
 </header><!--/header-->
+
+<div class="container">
 <h2>Your Howl Hug Dashboard</h2>
-
-
-<h1>Welcome, ${firstName}!</h1>
+<h2>Welcome!</h2>
 
 ${something}
 <br>
@@ -92,6 +92,6 @@ ${something}
 <iframe src="
 https://calendar.google.com/calendar/embed?src=ci0im9019ojt8m3dmkmlbc68qo@group.calendar.google.com" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
-
+</div>
 </body>
 </html>

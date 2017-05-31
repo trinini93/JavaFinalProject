@@ -84,7 +84,7 @@
                                 <h2 class="animation animated-item-1" style="color:#3c5899">Welcome to Fur Sitters!<br>
                                     Connecting Local Companions<br>
                                     for your pets while you are away.</h2>
-                                <h3 class="animation animated-item-2"><br><a href="createAccount" style="color:#3c5899">Click <strong>Register</strong> to sign up with Fur Sitters!</a>
+                                <h3 class="animation animated-item-2"><br><a href="#createA" style="color:#3c5899">Click <strong>Register</strong> to sign up with Fur Sitters!</a>
                                 </h3><br><br>
                                 <!-- NEED LINK TO LOGIN HERE  -->
                                 <h3 style="color:#3c5899">Click <strong>'Authorize'</strong> if you have a<br>Google Account:</h3>
@@ -105,7 +105,7 @@
                                 <h3 style="color:#3c5899">Click the Fur Sitter <a
                                         href="dashboard?parentName=msepa5@sdcglobal.net"
                                         style="color:#3c5899"><strong>Dashboard</strong></a> <br>
-                                    to schedule or view upcoming pet-sits.</h3>
+                                    to schedule or view upcoming pet-sits.</h3><a name="createA">
 
                                 <%--<h3 style="color:#3c5899"><a href="dashboard" style="color:#3c5899">Schedule an event</a>--%>
                                 <%--</h3>--%>
@@ -117,93 +117,111 @@
             </div>
         </div><!--/.item-->
 
-
-        <div class="item" style="background-image: url( '/resources/images/slider/bg2.jpg' )">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="carousel-content center centered">
-                            <h2 class="boxed animation animated-item-1">Because your cousin loves your furbaby like a brother,</h2>
-                            <p class="boxed animation animated-item-2">Fur Sitters helps you schedule a pet sitting visit that makes everyone happy.</p>
-                            <br>
-                            <a class="btn btn-md animation animated-item-3" href="createAccount">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!--/.item-->
-        <div class="item" style="background-image: url('/resources/images/slider/bg3.jpg')">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="carousel-content centered">
-                            <h2 class="animation animated-item-1">Scheduling Companions for your pets</h2>
-                            <p class="animation animated-item-2">spreads the Fur Love!</p>
-                            <a class="btn btn-md animation animated-item-3" href="createAccount">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 hidden-xs animation animated-item-4">
-                        <div class="centered">
-                            <div class="embed-container">
-                                <!-- <iframe src="//player.vimeo.com/video/69421653?title=0&amp;byline=0&amp;portrait=0&amp;color=a22c2f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!--/.item-->
-    </div><!--/.carousel-inner-->
-    </div><!--/.carousel-->
-    <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
-        <i class="icon-angle-left"></i>
-    </a>
-    <a class="next hidden-xs" href="#main-slider" data-slide="next">
-        <i class="icon-angle-right"></i>
-    </a>
-</section><!--/#main-slider-->
-
-<section id="services" class="wet-asphalt">
+        <section id="services" class="clouds">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-6">
-                <div class="media">
-                    <div class="pull-left">
-                        <i class="icon-twitter icon-md"></i>
+        <div class="form-group center_div">
+            ${googleID} <br>
+                <form name="userInfo" method="GET" action="/finishAccount" onsubmit="return validateForm();">
+                <h2 style="color:#00">Fill out form completely to join the <br>Fur Sitters Pet Sitter Web App</h2>
+                <table>
+                    <div class="col-xs-6">
+                        <tr>
+                            <td>Email: <input type="text" name="email" required class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>First Name: <input type="text" name="firstName" required class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name: <input type="text" name="lastName" required class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>Address: <input type="text" name="address" required class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>Apt: <input type="text" name="apt" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>City: <input type="text" name="city" required class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>State: <input type="text" name="state" required class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>Zip: <input type="text" name="zip" required class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>Password: <input type="password" name="password" required class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>Repeat Password: <input type="password" name="repeatPassword" required class="form-control"></td>
+                        </tr><br><br>
+                        <tr>
+                            <td>Are you a Parent: <input type="radio" name="parent" value="1" checked>Yes    <input type="radio" name="parent" value="0">No</td>
+                        </tr><br><br>
+                        <tr>
+                            <td>Are you a Sitter: <input type="radio" name="sitter" value="1" checked>Yes     <input type="radio" name="sitter" value="0">No</td>
+                        </tr><br><br>
+                        <tr>
+                            <td>
+                                <input type="hidden" name="status" id="status" value=${googleID}/>
+
+                                <input type="submit" value="Submit" class="form-control" />
+                                <%--<input id="authorize-button" type="submit" value="Submit" class="form-control" />--%>
+
+                                <%--<form action="/dashboard" method="post">--%>
+                                <%--<input type="hidden" name="status" id="status" value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>--%>
+                                <%--<input type="submit" value = "Dashboard">--%>
+                                <%--</form>--%>
+
+                            </td>
+                        </tr>
                     </div>
-                    <div class="media-body">
-                        <h3 class="media-heading">Twitter Marketing</h3>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                        Vestibulum tortor quam, feugiat vitae.</p>
-                    </div>
-                </div>
-            </div><!--/.col-md-4-->
-            <div class="col-md-4 col-sm-6">
-                <div class="media">
-                    <div class="pull-left">
-                        <i class="icon-facebook icon-md"></i>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="media-heading">Facebook Marketing</h3>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                        Vestibulum tortor quam, feugiat vitae.</p>
-                    </div>
-                </div>
-            </div><!--/.col-md-4-->
-            <div class="col-md-4 col-sm-6">
-                <div class="media">
-                    <div class="pull-left">
-                        <i class="icon-google-plus icon-md"></i>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="media-heading">Google Plus Marketing</h3>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                        Vestibulum tortor quam, feugiat vitae.</p>
-                    </div>
-                </div>
-            </div><!--/.col-md-4-->
-        </div>
+                </table>
+            </form>
     </div>
-</section><!--/#services-->
+</section>
+<%--<section id="services" class="wet-asphalt">--%>
+    <%--<div class="container">--%>
+        <%--<div class="row">--%>
+            <%--<div class="col-md-4 col-sm-6">--%>
+                <%--<div class="media">--%>
+                    <%--<div class="pull-left">--%>
+                        <%--<i class="icon-twitter icon-md"></i>--%>
+                    <%--</div>--%>
+                    <%--<div class="media-body">--%>
+                        <%--<h3 class="media-heading">Twitter Marketing</h3>--%>
+                        <%--<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.--%>
+                        <%--Vestibulum tortor quam, feugiat vitae.</p>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div><!--/.col-md-4-->--%>
+            <%--<div class="col-md-4 col-sm-6">--%>
+                <%--<div class="media">--%>
+                    <%--<div class="pull-left">--%>
+                        <%--<i class="icon-facebook icon-md"></i>--%>
+                    <%--</div>--%>
+                    <%--<div class="media-body">--%>
+                        <%--<h3 class="media-heading">Facebook Marketing</h3>--%>
+                        <%--<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.--%>
+                        <%--Vestibulum tortor quam, feugiat vitae.</p>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div><!--/.col-md-4-->--%>
+            <%--<div class="col-md-4 col-sm-6">--%>
+                <%--<div class="media">--%>
+                    <%--<div class="pull-left">--%>
+                        <%--<i class="icon-google-plus icon-md"></i>--%>
+                    <%--</div>--%>
+                    <%--<div class="media-body">--%>
+                        <%--<h3 class="media-heading">Google Plus Marketing</h3>--%>
+                        <%--<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.--%>
+                        <%--Vestibulum tortor quam, feugiat vitae.</p>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div><!--/.col-md-4-->--%>
+        <%--</div>--%>
+    <%--</div>--%>
+<%--</section><!--/#services-->--%>
 
 
 <!-- Project Elevator Pitch section -->
