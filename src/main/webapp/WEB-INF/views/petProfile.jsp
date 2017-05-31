@@ -63,8 +63,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <h2>Welcome to Pet Sitters!</h2>
-                <p>Please fill out the form below to register your pet  with Pet Sitters.</p>
+                <h1>Welcome to Fur Sitters!</h1>
+
             </div>
             <!-- REDUNDANT NAVIGATION -->
             <%--<div class="col-sm-6">--%>
@@ -78,13 +78,12 @@
     </div>
 </section><!--/#title-->
 
-Please fill out the form below to register your pet with Pet Sitters.
 
 <%--ACTION is empty until we figure out which page this is going to--%>
 <div class="form-group center_div">
     <div class="col-sm-6">
     <form action="/dogBreedList">
-        <h2 class="form-heading">Please fill out form completely.</h2>
+        <h2 class="form-heading">Please fill out the form below to register your pet with Fur Sitters.</h2>
 
 <!-- <form action="/dogBreedList"> -->
 
@@ -93,7 +92,7 @@ Please fill out the form below to register your pet with Pet Sitters.
     <input type="radio" name="pettype" value="dog" checked class="form-control"> Dog<br>
     <input type="radio" name="pettype" value="cat" class="form-control"> Cat<br>
 <input type="submit" class="form-control"> <br>
-        'Submit' before continuing with this questionnaire.<br>
+        Please click <strong>'Submit'</strong> prior to continuing with this questionnaire.<br>
 </form>
 <%--Step 2: Pet's name (text form)--%>
     <form action = "/petProfileSuccess" method ="post">
