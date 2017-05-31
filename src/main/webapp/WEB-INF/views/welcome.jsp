@@ -78,8 +78,8 @@
                                 <h2 class="animation animated-item-1" style="color:#3c5899">Welcome to Fur Sitters!<br>
                                     Connecting Local Companions<br>
                                     for your pets while you are away.</h2>
-                                <h1 class="animation animated-item-2"><br><a href="createAccount" style="color:#3c5899">Register</a>
-                                </h1><br><br>
+                                <h3 class="animation animated-item-2"><br><a href="createAccount" style="color:#3c5899">Click <strong>Register</strong> to sign up with Fur Sitters!</a>
+                                </h3><br><br>
                                 <!-- NEED LINK TO LOGIN HERE  -->
                                 <h3 style="color:#3c5899">Click <strong>'Authorize'</strong> if you have a<br>Google Account:</h3>
                                 <div class="col-xs-2">
