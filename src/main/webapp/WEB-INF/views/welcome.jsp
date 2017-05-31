@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Welcome to Howl Hugs Pet Sitter App</title>
+    <title>Welcome to Fur Sitters!</title>
 
 
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
@@ -39,14 +39,6 @@
           href="<c:url value="/resources/images/ico/apple-touch-icon-57-precomposed.png"/>">
 </head>
 <body>
-
-<%--<h1>${hello}</h1>--%>
-<%--Welcome to PetSitters! Click below to register.--%>
-<%--<br><a href="createAccount">Register</a><br>--%>
-<%--If you already have an account, login in below.--%>
-<%--<body>--%>
-
-<!-- top main nav -->
 
 <header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
     <div class="container">
@@ -89,14 +81,13 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <h1 class="carousel-content centered">
-                                <h2 class="animation animated-item-1" style="color:#3c5899">Welcome to Howl Hugs Pet
-                                    Sitter App! <br>
+                                <h2 class="animation animated-item-1" style="color:#3c5899">Welcome to Fur Sitters!<br>
                                     Connecting Local Companions<br>
                                     for your pets while you are away.</h2>
-                                <h1 class="animation animated-item-2"><br><a href="createAccount" style="color:#3c5899">Register</a>
-                                </h1><br><br>
+                                <h3 class="animation animated-item-2"><br><a href="createAccount" style="color:#3c5899">Click <strong>Register</strong> to sign up with Fur Sitters!</a>
+                                </h3><br><br>
                                 <!-- NEED LINK TO LOGIN HERE  -->
-                                <h3 style="color:#3c5899">Login here if you have a Google Account:</h3>
+                                <h3 style="color:#3c5899">Click <strong>'Authorize'</strong> if you have a<br>Google Account:</h3>
                                 <div class="col-xs-2">
 
                                     <button id="authorize-button" style="display: none;" class="form-control">
@@ -111,10 +102,10 @@
                                 <br>
                                 <br>
 
-                                <h3 style="color:#3c5899">View the Pet Sitter <a
+                                <h3 style="color:#3c5899">Click the Fur Sitter <a
                                         href="dashboard?parentName=msepa5@sdcglobal.net"
-                                        style="color:#3c5899">Dashboard</a> <br>
-                                    to see all your Pet Sitting App appointments and to schedule a Sitter.</h3>
+                                        style="color:#3c5899"><strong>Dashboard</strong></a> <br>
+                                    to schedule or view upcoming pet-sits.</h3>
 
                                 <%--<h3 style="color:#3c5899"><a href="dashboard" style="color:#3c5899">Schedule an event</a>--%>
                                 <%--</h3>--%>
@@ -132,10 +123,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="carousel-content center centered">
-                            <h2 class="boxed animation animated-item-1">Because your Cousin Loves your Pet like a
-                                Brother,</h2>
-                            <p class="boxed animation animated-item-2">Howl Hugs helps you schedule a Pet Sitting visit
-                            that makes everyone happy.</p>
+                            <h2 class="boxed animation animated-item-1">Because your cousin loves your furbaby like a brother,</h2>
+                            <p class="boxed animation animated-item-2">Fur Sitters helps you schedule a pet sitting visit that makes everyone happy.</p>
                             <br>
                             <a class="btn btn-md animation animated-item-3" href="createAccount">Learn More</a>
                         </div>
@@ -148,8 +137,8 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="carousel-content centered">
-                            <h2 class="animation animated-item-1">Scheduling Companions for your Pets</h2>
-                            <p class="animation animated-item-2">will make spread the Howl Hugs.</p>
+                            <h2 class="animation animated-item-1">Scheduling Companions for your pets</h2>
+                            <p class="animation animated-item-2">spreads the Fur Love!</p>
                             <a class="btn btn-md animation animated-item-3" href="createAccount">Learn More</a>
                         </div>
                     </div>
@@ -223,9 +212,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="center">
-                    <h3>What - Who - Why</h3>
-                    <p>The Howl Hugs Pet Sitter Web App fills the need to schedule <br>companionship for family pets
-                        while the owners are away </p>
+                    <h3>Who - What - Why</h3>
+                    <p>The Fur Sitters web app fills the need to schedule <br>companionship for family pets
+                        while the owners are away. </p>
                 </div>
                 <div class="gap"></div>
                 <div class="row">
@@ -233,26 +222,26 @@
                         <blockquote>
                             <p>Besides being a ‘feel-good’ app, this is a great project to showcase all the skills we
                             now have in Java, MySQL, JDBC, SpringMVC, Hibernate, Javascript and API integration. The
-                            Howl Hugs Pet Sitter Web App fills the need to schedule companionship for family pets
+                            Fur Sitters Web App fills the need to schedule companionship for family pets
                             while the owners are away – a positive alternative to kennel boarding, or leaving your
-                            ‘independent’ cat alone for the weekend. </p>
+                            "independent" cat alone for the weekend. </p>
                             <small>Lydia Latocki, <cite title="Java Developer">Java Developer</cite></small>
                         </blockquote>
                         <blockquote>
-                            <p>Users set up a Social Network of Sitters and Pet Parents to schedule Pet Sitting. To
+                            <p>Users set up a Social Network of Sitters and Pet Parents to schedule a Pet Sitting. To
                             begin, Users create accounts with profiles held in MySQL on Amazon Web Services that are
                             validated through Spring MVC validation. Pets are included in Parent profiles. Type of
-                            pet are defined with the help of a drop down menu using the Purina Breed API that
+                            pet are defined with the help of a drop down menu using the PetFinder Breed API that
                             conveniently lists all dog and cat breeds. </p>
                             <small>Trina Chowdhury, <cite title="Java Developer">Java Developer</cite></small>
                         </blockquote>
                     </div>
                     <div class="col-md-6">
                         <blockquote>
-                            <p>Parents invite friends to join the app and link to their shared Howl Hugs Network.
-                            Sitters profiles include type of animal Sitters are willing to companion. Users can be
-                            both Sitters and Parents, or update their profile at anytime if things change. Users can
-                            view their own Pet Network of friends to schedule Pet Sitting.</p>
+                            <p>Parents invite friends and family to join the app and link to their shared Fur Sitters network.
+                            A Sitter's profile includes type of animal sitters are willing to companion. Users can be
+                            both Sitters and Parents. Users can
+                            view their own Sitter Network of friends to schedule Pet Sitting.</p>
                             <small>Jeremy Villa, <cite title="Java Developer">Java Developer</cite></small>
                         </blockquote>
                         <%--<blockquote>--%>
@@ -276,11 +265,11 @@
                     <br/>
                     April 10 through June 2, 2017.<br/>
                     Requirements include:<br/>
-                    Building a Web App in Java Development Language.<br/>
-                    Use Spring MVC Framework with Hibernate Extension.<br/>
-                    Use MySQL Database and JDBC Connectivity.<br/>
-                    Incorporate an API.<br/>
-                    Complete the working demo in two weeks.<br/>
+                    -Building a Web App in Java Development Language.<br/>
+                    -Using Spring MVC Framework with Hibernate Extension.<br/>
+                    -Using MySQL Database and JDBC Connectivity.<br/>
+                    -Incorporating an API.<br/>
+                    -Completing the working demo in two weeks.<br/>
                 </p>
             </div><!--/.col-md-3-->
 
