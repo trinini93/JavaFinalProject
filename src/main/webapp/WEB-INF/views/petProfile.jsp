@@ -62,7 +62,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-          <h1>Welcome to Fur Sitters!</h1>
+          <h2>Welcome to Fur Sitters!</h2>
 
             </div>
             <!-- REDUNDANT NAVIGATION -->

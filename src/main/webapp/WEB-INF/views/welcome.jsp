@@ -84,94 +84,48 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h1 class="carousel-content centered">
+                            <h1 class="carousel-content centered"></h1>
                                 <h2 class="animation animated-item-1" style="color:#3c5899">Welcome to Fur Sitters!<br>
                                     Connecting Local Companions<br>
                                     for your pets while you are away.</h2>
-                                <h3 class="animation animated-item-2"><br><a href="#createA" style="color:#3c5899">Click <strong>Register</strong> to sign up with Fur Sitters!</a>
-                                </h3><br><br>
+                                <h3 class="animation animated-item-2" style="color:#3c5899"><br>Click <strong><a href="#createA" style="color:#3c5899">Register</a></strong> to sign up with Fur Sitters!</h3><br>
                                 <!-- this is the google login/authorization button to!-->
-                                <h3 style="color:#3c5899">Click <strong>'Authorize'</strong> if you have a<br>Google Account:</h3>
+                                <h3 style="color:#3c5899">If you have a Fur Sitters account, <br>
+                                    click <strong>'Authorize'</strong> to sign in <br>
+                                    with your Google Account:</h3>
                                 <div class="col-xs-2">
-
                                     <%--this ID button talks to script of bottom of page from google/google API--%>
                                     <button id="authorize-button" style="display: none;" class="form-control">
                                         Authorize
                                     </button>
-
                                     <button id="signout-button" style="display: none;" class="form-control">Sign Out
                                     </button>
-                                    <pre id="content"></pre>
+                                    <%--<pre id="content"></pre>--%>
 
                                 </div>
                                 <br>
                                 <br>
                                 <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br><a name="createA"></a>
 
-                                <h3 style="color:#3c5899">Click the Fur Sitter <a
-                                        href="dashboard?parentName=msepa5@sdcglobal.net"
-                                        style="color:#3c5899"><strong>Dashboard</strong></a> <br>
-                                    to schedule or view upcoming pet-sits.</h3><a name="createA">
-
-                                <%--<h3 style="color:#3c5899"><a href="dashboard" style="color:#3c5899">Schedule an event</a>--%>
-                                <%--</h3>--%>
 
                                 <!-- END GOOGLE LOGIN CODE-->
                         </div>
                     </div>
-                </div>
-            </div>
-        </div><!--/.item-->
-
-
-        <section id="services" class="clouds">
-
-<%--carosoul pics that still don't work. removing--%>
-        <div class="item" style="background-image: url( '/resources/images/slider/bg2.jpg' )">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="carousel-content center centered">
-                            <h2 class="boxed animation animated-item-1">Because your cousin loves your furbaby like a brother,</h2>
-                            <p class="boxed animation animated-item-2">Fur Sitters helps you schedule a pet sitting visit that makes everyone happy.</p>
-                            <br>
-                            <a class="btn btn-md animation animated-item-3" href="createAccount">Learn More</a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div><!--/.item-->
-        <div class="item" style="background-image: url('/resources/images/slider/bg3.jpg')">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="carousel-content centered">
-                            <h2 class="animation animated-item-1">Scheduling Companions for your pets</h2>
-                            <p class="animation animated-item-2">spreads the Fur Love!</p>
-                            <a class="btn btn-md animation animated-item-3" href="createAccount">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 hidden-xs animation animated-item-4">
-                        <div class="centered">
-                            <div class="embed-container">
-                                <!-- <iframe src="//player.vimeo.com/video/69421653?title=0&amp;byline=0&amp;portrait=0&amp;color=a22c2f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!--/.item-->
-    </div><!--/.carousel-inner-->
-    </div><!--/.carousel-->
-    <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
-        <i class="icon-angle-left"></i>
-    </a>
-    <a class="next hidden-xs" href="#main-slider" data-slide="next">
-        <i class="icon-angle-right"></i>
-    </a>
-</section><!--/#main-slider-->
-
-<section id="services" class="wet-asphalt">
+    </section>
+ <section id="services" class="clouds">
 
     <div class="container">
         <div class="form-group center_div">
@@ -285,7 +239,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="center">
-                    <h3>Who - What - Why</h3>
+                    <h2>Who - What - Why</h2>
                     <p>The Fur Sitters web app fills the need to schedule <br>companionship for family pets
                         while the owners are away. </p>
                 </div>
@@ -317,10 +271,6 @@
                             view their own Sitter Network of friends to schedule Pet Sitting.</p>
                             <small>Jeremy Villa, <cite title="Java Developer">Java Developer</cite></small>
                         </blockquote>
-                        <%--<blockquote>--%>
-                        <%--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>--%>
-                        <%--<small>Someone famous in <cite title="Source Title">Source Title</cite></small>--%>
-                        <%--</blockquote>--%>
                     </div>
                 </div>
             </div>
@@ -331,8 +281,9 @@
 <!-- FOOTER -->
 <section id="bottom" class="wet-asphalt">
     <div class="container">
-        <div class="row">
+        <div>
             <div class="col-md-3 col-sm-6">
+                <br>
                 <h4>About Us</h4>
                 <p>This web app meets Final Project requirements for the Grand Circus Tech Java Intensive Bootcamp held
                     <br/>
@@ -346,18 +297,7 @@
                 </p>
             </div><!--/.col-md-3-->
 
-
-            <%--<form action="/getStatus" method="post">--%>
-                <%--<input type="hidden" name="status" id="status"--%>
-                       <%--value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>--%>
-                <%--<!--Add buttons to initiate auth sequence and sign out-->--%>
-                <%--<button id="authorize-button" style="display: none;" name="status"--%>
-                        <%--value="gapi.auth2.getAuthInstance().currentUser.get().getId()">Authorize</button>--%>
-                <%--<button id="signout-button" style="display: none;">Sign Out</button>--%>
-                <%--&lt;%&ndash;<input type="submit" value="Dashboard">&ndash;%&gt;--%>
-            <%--</form>--%>
-
-            <pre id="content"></pre>
+            <%--<pre id="content"></pre>--%>
 
             <div class="col-md-3 col-sm-6">
                 <h4>Company</h4>
@@ -444,12 +384,6 @@
         </div>
     </div>
 </section><!--/#bottom-->
-
-<%--<form action="/dashboard" method="post">--%>
-<%--<input type="hidden" name="status" id="status" value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>--%>
-<%--<input type="submit" value = "Dashboard">--%>
-<%--</form>--%>
-
 
 <!-- END BOOTSTRAP HTML -->
 <script type="text/javascript">
@@ -573,7 +507,6 @@
     }
 
 </script>
-
 
 <%--this script is calling out google api--%>
 <script async defer src="https://apis.google.com/js/api.js"

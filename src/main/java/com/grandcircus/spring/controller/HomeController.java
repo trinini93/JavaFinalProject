@@ -45,26 +45,6 @@ import java.util.ArrayList;
 public class HomeController {
 
 
-    //WELCOME PAGE
-    //Step 1: REMOVE ALL WORDING FOR GOOGLE ACCOUNT/LOGIN
-    //Step 2: Remove google OAuth
-    //Step 3: Do current user login functionality (this will cross ref input with DB
-
-    //welcome pg only includes: login, or create an acct.
-
-    //make 3 diff dashboards. parent, sitter, and both.
-
-    //THIS IS FOR PARENT DASH
-    //Step 1: The dash will include cal and sitter network. FEATURE TO ADD(per Kim): HOW TO ADD PEOPLE TO NETWORK.
-    //  A) This page will ask if user wants to request a pet sit.
-    //  STRETCH  GOAL Update user profile option //
-    // STRETCH GOAL, CREATE DROPDOWN FOR DATES WANTING A SIT//
-
-
-    //sitterProfileSuccess page should route back to dashboard.
-
-
-
     @RequestMapping("/")
     public ModelAndView welcomePage() {
 
@@ -316,13 +296,13 @@ public class HomeController {
         sitter.setTrav(trav);
         sitter.setExperience(experience);
 
-        model.addAttribute("petSize", sitter.getPetSize());
-        model.addAttribute("myHome", sitter.getMyHome());
-        model.addAttribute("yourHome", sitter.getMyHome());
-        model.addAttribute("temper", sitter.getTemper());
-        model.addAttribute("activities", sitter.getActivities());
-        model.addAttribute("trav", sitter.getTrav());
-        model.addAttribute("experience", sitter.getExperience());
+//        model.addAttribute("petSize", sitter.getPetSize());
+//        model.addAttribute("myHome", sitter.getMyHome());
+//        model.addAttribute("yourHome", sitter.getMyHome());
+//        model.addAttribute("temper", sitter.getTemper());
+//        model.addAttribute("activities", sitter.getActivities());
+//        model.addAttribute("trav", sitter.getTrav());
+//        model.addAttribute("experience", sitter.getExperience());
 
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 
@@ -382,19 +362,19 @@ public class HomeController {
         user.setSitter(sitter);
         user.setGoogleNum(googleID);
 
-        model.addAttribute("email", user.getEmail());
-        model.addAttribute("firstName", user.getFirstName());
-        model.addAttribute("lastName", user.getLastName());
-        model.addAttribute("address", user.getAddress());
-        model.addAttribute("apt", user.getApt());
-        model.addAttribute("city", user.getCity());
-        model.addAttribute("state", user.getState());
-        model.addAttribute("zip", user.getZip());
-        model.addAttribute("password", user.getPassword());
-        model.addAttribute("repeatPassword", user.getRepeatPassword());
-        model.addAttribute("parent", user.getParent());
-        model.addAttribute("sitter", user.getSitter());
-        System.out.print(user.getFirstName());
+//        model.addAttribute("email", user.getEmail());
+//        model.addAttribute("firstName", user.getFirstName());
+//        model.addAttribute("lastName", user.getLastName());
+//        model.addAttribute("address", user.getAddress());
+//        model.addAttribute("apt", user.getApt());
+//        model.addAttribute("city", user.getCity());
+//        model.addAttribute("state", user.getState());
+//        model.addAttribute("zip", user.getZip());
+//        model.addAttribute("password", user.getPassword());
+//        model.addAttribute("repeatPassword", user.getRepeatPassword());
+//        model.addAttribute("parent", user.getParent());
+//        model.addAttribute("sitter", user.getSitter());
+//        System.out.print(user.getFirstName());
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 
         Session session = factory.openSession();
