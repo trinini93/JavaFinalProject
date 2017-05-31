@@ -1,5 +1,10 @@
 package com.grandcircus.spring.controller;
 
+
+import com.grandcircus.spring.models.ParentPetFormEntity;
+
+import com.grandcircus.spring.models.SittersEntity;
+
 import com.grandcircus.spring.models.*;
 
 import org.apache.http.HttpHost;
@@ -57,6 +62,8 @@ public class HomeController {
 
 
     //sitterProfileSuccess page should route back to dashboard.
+
+
 
     @RequestMapping("/")
     public ModelAndView welcomePage() {
@@ -357,6 +364,7 @@ public class HomeController {
                                          @RequestParam("repeatPassword") String repeatPassword,
                                          @RequestParam("parent") byte parent,
                                          @RequestParam("sitter") byte sitter,
+                                         @RequestParam("status") String googleID,
                                          Model model) {
         UserProfileEntity user = new UserProfileEntity();
         user.setEmail(email);
@@ -371,6 +379,7 @@ public class HomeController {
         user.setRepeatPassword(repeatPassword);
         user.setParent(parent);
         user.setSitter(sitter);
+        user.setGoogleNum(googleID);
 
         model.addAttribute("email", user.getEmail());
         model.addAttribute("firstName", user.getFirstName());

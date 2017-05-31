@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: trina2
@@ -63,7 +62,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <h1>Welcome to Fur Sitters!</h1>
+          <h1>Welcome to Fur Sitters!</h1>
 
             </div>
             <!-- REDUNDANT NAVIGATION -->
@@ -78,7 +77,6 @@
     </div>
 </section><!--/#title-->
 
-
 <%--ACTION is empty until we figure out which page this is going to--%>
 <div class="form-group center_div">
     <div class="col-sm-6">
@@ -89,8 +87,12 @@
 
 <%--Step 1: Pet type dog/cat (radio button)--%>
     I have a:<br>
-    <input type="radio" name="pettype" value="dog" checked class="form-control"> Dog<br>
-    <input type="radio" name="pettype" value="cat" class="form-control"> Cat<br>
+        <label class="radio-inline">
+    <input type="radio" name="pettype" value="dog" checked class="form-control"> Dog
+        </label>
+        <label class="radio-inline">
+    <input type="radio" name="pettype" value="cat" class="form-control"> Cat
+        </label>
 <input type="submit" class="form-control"> <br>
         Please click <strong>'Submit'</strong> prior to continuing with this questionnaire.<br>
 </form>

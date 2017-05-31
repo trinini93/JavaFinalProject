@@ -33,16 +33,19 @@
             <column name="zip" sql-type="int(5)"/>
         </property>
         <property name="password">
-            <column name="password" sql-type="varchar(6)" length="6"/>
+            <column name="password" sql-type="varchar(20)" length="6"/>
         </property>
         <property name="repeatPassword">
-            <column name="repeatPassword" sql-type="varchar(6)" length="6"/>
+            <column name="repeatPassword" sql-type="varchar(20)" length="6"/>
         </property>
         <property name="parent">
             <column name="parent" sql-type="tinyint(1)"/>
         </property>
         <property name="sitter">
             <column name="sitter" sql-type="tinyint(4)"/>
+        </property>
+        <property name="googleNum">
+            <column name="googleNum" sql-type="varchar(30)" length="30" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

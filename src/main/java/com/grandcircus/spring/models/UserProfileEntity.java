@@ -3,9 +3,8 @@ package com.grandcircus.spring.models;
 import javax.persistence.*;
 
 /**
- * Created by Pro on 5/23/17.
+ * Created by Pro on 5/30/17.
  */
-
 @Entity
 @Table(name = "UserProfile", schema = "PETSITTER", catalog = "")
 public class UserProfileEntity {
@@ -22,6 +21,7 @@ public class UserProfileEntity {
     private String repeatPassword;
     private byte parent;
     private byte sitter;
+    private String googleNum;
 
     @Id
     @Column(name = "userID", nullable = false)
@@ -153,6 +153,16 @@ public class UserProfileEntity {
         this.sitter = sitter;
     }
 
+    @Basic
+    @Column(name = "googleNum", nullable = true, length = 30)
+    public String getGoogleNum() {
+        return googleNum;
+    }
+
+    public void setGoogleNum(String googleNum) {
+        this.googleNum = googleNum;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -174,6 +184,7 @@ public class UserProfileEntity {
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
         if (repeatPassword != null ? !repeatPassword.equals(that.repeatPassword) : that.repeatPassword != null)
             return false;
+        if (googleNum != null ? !googleNum.equals(that.googleNum) : that.googleNum != null) return false;
 
         return true;
     }
@@ -193,6 +204,7 @@ public class UserProfileEntity {
         result = 31 * result + (repeatPassword != null ? repeatPassword.hashCode() : 0);
         result = 31 * result + (int) parent;
         result = 31 * result + (int) sitter;
+        result = 31 * result + (googleNum != null ? googleNum.hashCode() : 0);
         return result;
     }
 }

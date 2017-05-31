@@ -92,24 +92,26 @@
                                 <!-- NEED LINK TO LOGIN HERE  -->
                                 <h3 style="color:#3c5899">Login here if you have a Google Account:</h3>
                                 <div class="col-xs-2">
+
                                     <button id="authorize-button" style="display: none;" class="form-control">
                                         Authorize
                                     </button>
                                     <button id="signout-button" style="display: none;" class="form-control">Sign Out
                                     </button>
                                     <pre id="content"></pre>
+
                                 </div>
                                 <br>
                                 <br>
                                 <br>
 
                                 <h3 style="color:#3c5899">View the Pet Sitter <a
-                                        href="calendar?parentName=msepa5@sdcglobal.net"
+                                        href="dashboard?parentName=msepa5@sdcglobal.net"
                                         style="color:#3c5899">Dashboard</a> <br>
-                                    to see all your Pet Sitting App appointments.</h3>
+                                    to see all your Pet Sitting App appointments and to schedule a Sitter.</h3>
 
-                                <h3 style="color:#3c5899"><a href="calendar" style="color:#3c5899">Schedule an event</a>
-                                </h3>
+                                <%--<h3 style="color:#3c5899"><a href="dashboard" style="color:#3c5899">Schedule an event</a>--%>
+                                <%--</h3>--%>
 
                                 <!-- END GOOGLE LOGIN CODE-->
                         </div>
@@ -127,7 +129,7 @@
                             <h2 class="boxed animation animated-item-1">Because your Cousin Loves your Pet like a
                                 Brother,</h2>
                             <p class="boxed animation animated-item-2">Howl Hugs helps you schedule a Pet Sitting visit
-                                that makes everyone happy.</p>
+                            that makes everyone happy.</p>
                             <br>
                             <a class="btn btn-md animation animated-item-3" href="createAccount">Learn More</a>
                         </div>
@@ -176,7 +178,7 @@
                     <div class="media-body">
                         <h3 class="media-heading">Twitter Marketing</h3>
                         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                            Vestibulum tortor quam, feugiat vitae.</p>
+                        Vestibulum tortor quam, feugiat vitae.</p>
                     </div>
                 </div>
             </div><!--/.col-md-4-->
@@ -188,7 +190,7 @@
                     <div class="media-body">
                         <h3 class="media-heading">Facebook Marketing</h3>
                         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                            Vestibulum tortor quam, feugiat vitae.</p>
+                        Vestibulum tortor quam, feugiat vitae.</p>
                     </div>
                 </div>
             </div><!--/.col-md-4-->
@@ -200,7 +202,7 @@
                     <div class="media-body">
                         <h3 class="media-heading">Google Plus Marketing</h3>
                         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                            Vestibulum tortor quam, feugiat vitae.</p>
+                        Vestibulum tortor quam, feugiat vitae.</p>
                     </div>
                 </div>
             </div><!--/.col-md-4-->
@@ -224,27 +226,27 @@
                     <div class="col-md-6">
                         <blockquote>
                             <p>Besides being a ‘feel-good’ app, this is a great project to showcase all the skills we
-                                now have in Java, MySQL, JDBC, SpringMVC, Hibernate, Javascript and API integration. The
-                                Howl Hugs Pet Sitter Web App fills the need to schedule companionship for family pets
-                                while the owners are away – a positive alternative to kennel boarding, or leaving your
-                                ‘independent’ cat alone for the weekend. </p>
+                            now have in Java, MySQL, JDBC, SpringMVC, Hibernate, Javascript and API integration. The
+                            Howl Hugs Pet Sitter Web App fills the need to schedule companionship for family pets
+                            while the owners are away – a positive alternative to kennel boarding, or leaving your
+                            ‘independent’ cat alone for the weekend. </p>
                             <small>Lydia Latocki, <cite title="Java Developer">Java Developer</cite></small>
                         </blockquote>
                         <blockquote>
                             <p>Users set up a Social Network of Sitters and Pet Parents to schedule Pet Sitting. To
-                                begin, Users create accounts with profiles held in MySQL on Amazon Web Services that are
-                                validated through Spring MVC validation. Pets are included in Parent profiles. Type of
-                                pet are defined with the help of a drop down menu using the Purina Breed API that
-                                conveniently lists all dog and cat breeds. </p>
+                            begin, Users create accounts with profiles held in MySQL on Amazon Web Services that are
+                            validated through Spring MVC validation. Pets are included in Parent profiles. Type of
+                            pet are defined with the help of a drop down menu using the Purina Breed API that
+                            conveniently lists all dog and cat breeds. </p>
                             <small>Trina Chowdhury, <cite title="Java Developer">Java Developer</cite></small>
                         </blockquote>
                     </div>
                     <div class="col-md-6">
                         <blockquote>
                             <p>Parents invite friends to join the app and link to their shared Howl Hugs Network.
-                                Sitters profiles include type of animal Sitters are willing to companion. Users can be
-                                both Sitters and Parents, or update their profile at anytime if things change. Users can
-                                view their own Pet Network of friends to schedule Pet Sitting.</p>
+                            Sitters profiles include type of animal Sitters are willing to companion. Users can be
+                            both Sitters and Parents, or update their profile at anytime if things change. Users can
+                            view their own Pet Network of friends to schedule Pet Sitting.</p>
                             <small>Jeremy Villa, <cite title="Java Developer">Java Developer</cite></small>
                         </blockquote>
                         <%--<blockquote>--%>
@@ -277,7 +279,7 @@
             </div><!--/.col-md-3-->
 
 
-            <form action="/dashboard" method="post">
+            <form action="/getStatus" method="post">
                 <input type="hidden" name="status" id="status"
                        value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>
                 <input type="submit" value="Dashboard">
@@ -370,6 +372,12 @@
         </div>
     </div>
 </section><!--/#bottom-->
+
+<%--<form action="/dashboard" method="post">--%>
+<%--<input type="hidden" name="status" id="status" value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>--%>
+<%--<input type="submit" value = "Dashboard">--%>
+<%--</form>--%>
+
 
 <!-- END BOOTSTRAP HTML -->
 <script type="text/javascript">
@@ -488,134 +496,13 @@
         });
     }
 
-    // Client ID and API key from the Developer Console
-    var CLIENT_ID = '802805404885-h8ffds7tamadqlv1pqduuf4s7emn5c24.apps.googleusercontent.com';
-
-    // Array of API discovery doc URLs for APIs used by the quickstart
-    var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
-
-    // Authorization scopes required by the API; multiple scopes can be
-    // included, separated by spaces.
-    var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
-
-    var authorizeButton = document.getElementById('authorize-button');
-    var signoutButton = document.getElementById('signout-button');
-
-    /**
-     *  On load, called to load the auth2 library and API client library.
-     */
-    function handleClientLoad() {
-        gapi.load('client:auth2', initClient);
-    }
-
-    /**
-     *  Initializes the API client library and sets up sign-in state
-     *  listeners.
-     */
-    function initClient() {
-        gapi.client.init({
-            discoveryDocs: DISCOVERY_DOCS,
-            clientId: CLIENT_ID,
-            scope: SCOPES
-        }).then(function () {
-// Listen for signin state changes.
-            gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-
-// Handle the initial sign-in state.
-            updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-            authorizeButton.onclick = handleAuthClick;
-            signoutButton.onclick = handleSignoutClick;
-        });
-    }
-
-    /**
-     *  Called when the sned in status changes, to update the UI
-     *  appropriately. After a sign-in, the API is called.
-     */
-    function updateSigninStatus(isSignedIn) {
-        if (isSignedIn) {
-            authorizeButton.style.display = 'none';
-            signoutButton.style.display = 'block';
-            console.log(gapi.auth2.getAuthInstance().currentUser.get().getId());
-        } else {
-            authorizeButton.style.display = 'block';
-            signoutButton.style.display = 'none';
-        }
-    }
-
-    /**
-     *  Sign in the user upon button click.
-     */
-    function handleAuthClick(event) {
-        gapi.auth2.getAuthInstance().signIn();
-    }
-
-    /**
-     *  Sign out the user upon button click.
-     */
-    function handleSignoutClick(event) {
-        gapi.auth2.getAuthInstance().signOut();
-    }
-
-    /**
-     * Append a pre element to the body containing the given message
-     * as its text node. Used to display the results of the API call.
-     *
-     * @param {string} message Text to be placed in pre element.
-     */
-    function appendPre(message) {
-        var pre = document.getElementById('content');
-        var textContent = document.createTextNode(message + '\n');
-        pre.appendChild(textContent);
-    }
-
-    /**
-     * Print the summary and start datetime/date of the next ten events in
-     * the authorized user's calendar. If no events are found an
-     * appropriate message is printed.
-     */
-    function listUpcomingEvents() {
-        gapi.client.calendar.events.list({
-            'calendarId': 'primary',
-            'timeMin': (new Date()).toISOString(),
-            'showDeleted': false,
-            'singleEvents': true,
-            'maxResults': 10,
-            'orderBy': 'startTime'
-        }).then(function (response) {
-            var events = response.result.items;
-            appendPre('Upcoming events:');
-
-            if (events.length > 0) {
-                for (i = 0; i < events.length; i++) {
-                    var event = events[i];
-                    var when = event.start.dateTime;
-                    if (!when) {
-                        when = event.start.date;
-                    }
-                    appendPre(event.summary + ' (' + when + ')')
-                }
-            } else {
-                appendPre('No upcoming events found.');
-            }
-        });
-    }
-
-
 </script>
+
 
 <script async defer src="https://apis.google.com/js/api.js"
         onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
 </script>
 
-When you have logged into your Google Account, <br>
-View the Pet Sitter<br>
-<a href="calendar?parentName=msepa5@sdcglobal.net">Calendar</a> <br>
-to see all the Pet Sitting App appointments.
-
-
-<!-- <a href="calendar">Schedule an event</a> -->
-
 </body>
-</html>
+    </html>
