@@ -1,6 +1,3 @@
-
-
-
 <%--
   Created by IntelliJ IDEA.
   User: Pro
