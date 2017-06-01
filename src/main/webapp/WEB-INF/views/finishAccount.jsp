@@ -50,7 +50,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="hover"><a href="/">Home</a></li>
                 <!-- <li><a href="about-us.html">About Howl Hugs</a></li> -->
-                <li class="hover"><a href="/dashboard">Dashboard</a></li>
+                <%--<li class="hover"><a href="/dashboard">Dashboard</a></li>--%>
             </ul>
         </div>
     </div>
@@ -60,7 +60,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <h2>Thank you for joining Fur Sitters, ${addUser}!</h2><br>
+                <h2>Thank you for joining Fur Sitters,<br> ${addUser}!</h2><br>
 
                 <p>If you are a Pet Parent needing to schedule a sitter, fill out your Pet Profile <a href="/petProfile">here.</a></p><br>
                 <br>

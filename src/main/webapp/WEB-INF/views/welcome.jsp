@@ -16,7 +16,7 @@
 
     <title>Welcome to Fur Sitters!</title>
 
-<%--These links are all CSS for styling of page, done via bootstrap--%>
+<%--These links are all CSS for styling of page, done via bootstrap and font-awesome --%>
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/font-awesome.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/prettyPhoto.css" />" rel="stylesheet">
@@ -30,14 +30,10 @@
     <![endif]-->
 
     <link href="<c:url value="/resources/images/ico/favicon.ico"/>" rel="shortcut icon">
-    <link sizes="144x144" href="<c:url value="/resources/images/ico/apple-touch-icon-144-precomposed.png"/>"
-          rel="apple-touch-icon-precomposed">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
-          href="<c:url value="/resources/images/ico/apple-touch-icon-114-precomposed.png"/>">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
-          href="<c:url value="/resources/images/ico/apple-touch-icon-72-precomposed.png"/>">
-    <link rel="apple-touch-icon-precomposed"
-          href="<c:url value="/resources/images/ico/apple-touch-icon-57-precomposed.png"/>">
+    <link sizes="144x144" href="<c:url value="/resources/images/ico/apple-touch-icon-144-precomposed.png"/>" rel="apple-touch-icon-precomposed">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<c:url value="/resources/images/ico/apple-touch-icon-114-precomposed.png"/>">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<c:url value="/resources/images/ico/apple-touch-icon-72-precomposed.png"/>">
+    <link rel="apple-touch-icon-precomposed" href="<c:url value="/resources/images/ico/apple-touch-icon-57-precomposed.png"/>">
 </head>
 <body>
 
@@ -74,11 +70,7 @@
 <!-- Begin background slider image with headline and link to Registration and Login -->
 <section id="main-slider" class="no-margin">
     <div class="carousel slide wet-asphalt">
-        <ol class="carousel-indicators">
-            <li data-target="#main-slider" data-slide-to="0" class="active"></li>
-            <li data-target="#main-slider" data-slide-to="1"></li>
-            <li data-target="#main-slider" data-slide-to="2"></li>
-        </ol>
+
         <div class="carousel-inner">
             <div class="item active" style="background-image: url('/resources/images/slider/bg1a.jpg')">
                 <div class="container">
@@ -91,8 +83,8 @@
                                 <h3 class="animation animated-item-2" style="color:#3c5899"><br>Click <strong><a href="#createA" style="color:#3c5899">Register</a></strong> to sign up with Fur Sitters!</h3><br>
                                 <!-- this is the google login/authorization button to!-->
                                 <h3 style="color:#3c5899">If you have a Fur Sitters account, <br>
-                                    click <strong>'Authorize'</strong> to sign in <br>
-                                    with your Google Account:</h3>
+                                    click <strong>'Authorize'</strong> to sign in with<br>
+                                    your Google Account:</h3>
                                 <div class="col-xs-2">
                                     <%--this ID button talks to script of bottom of page from google/google API--%>
                                     <button id="authorize-button" style="display: none;" class="form-control">
@@ -114,23 +106,21 @@
                                 <br>
                                 <br>
                                 <br>
-                                <br><a name="createA"></a>
-
-
+                                <br><a name="createA"></a><!-- from REGISTRATION word above, this link aligns page so user can see registration fields -->
                                 <!-- END GOOGLE LOGIN CODE-->
                         </div>
                     </div>
-                    </div>
                 </div>
             </div>
-        </div><!--/.item-->
-    </section>
+        </div>
+    </div><!--/.item-->
+</section>
  <section id="services" class="clouds">
 
     <div class="container">
         <div class="form-group center_div">
             ${googleID} <br>
-                <form name="userInfo" method="GET" action="/finishAccount" onsubmit="return validateForm();">
+            <form name="userInfo" method="GET" action="/finishAccount" onsubmit="return validateForm();">
                 <h2 style="color:#00">Fill out form completely to join the <br>Fur Sitters Pet Sitter Web App</h2>
                 <table>
                     <div class="col-xs-6">
@@ -187,6 +177,7 @@
                     </div>
                 </table>
             </form>
+        </div>
     </div>
 </section>
 
@@ -240,7 +231,6 @@
     <div class="container">
         <div>
             <div class="col-md-3 col-sm-6">
-                <br>
                 <h4>About Us</h4>
                 <p>This web app meets Final Project requirements for the Grand Circus Tech Java Intensive Bootcamp held
                     <br/>
@@ -473,4 +463,4 @@
 </script>
 
 </body>
-    </html>
+</html>

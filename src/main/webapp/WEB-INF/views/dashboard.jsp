@@ -53,8 +53,9 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hover"><a href="/">Home</a></li>
-                <!-- <li><a href="about-us.html">About Howl Hugs</a></li> -->
                 <li class="active"><a href="/dashboard">Dashboard</a></li>
+                <li class="hover"><a href="/petProfile">Pet Profile</a></li>
+                <li class="hover"><a href="/sitterProfile">Sitter Profile</a></li>
             </ul>
         </div>
     </div>
@@ -75,7 +76,7 @@ ${something}
     <br>
     <br>
     <br>
-    <button type="button" class="btn btn-default btn-lg"><a id="showSitters" href="addASitter">Show your Sitter Network</a></button>
+    <button type="button" class="btn btn-default"><a id="showSitters" href="addASitter">Show your Sitter Network</a></button>
     <br>
 <p>Then, select an email from your Network of Sitters to request an appointment for sitting.</p> <br>
 <c:forEach items="${sittersList}" var ="sEmail">
@@ -84,7 +85,7 @@ ${something}
 <br>
 <br>
 <br>
-
+    <%--this form will add a sitter to parent network.--%>
     <p>Click below to add a sitter to your Network.</p>
     <form action="addASitter" method="post">
         Sitter name: <input type="text" name="sName"><br>
@@ -94,13 +95,136 @@ ${something}
     </form> <br>
 
     <p>Successfuly Added:</p>
-    ${sitterAdded.sitterName}  ${sitterAdded.sitterEmail}
-
+    ${sitterAdded.sitterName}: ${sitterAdded.sitterEmail}
+    <br>
     <br>
 </div>
-<%--this form will add a sitter to parent network.--%>
-<script>
+<!-- fullbleed image -->
+<div class="item" style="background-image: url( '/resources/images/slider/bg2.jpg' )">
+    <div class="container-bkgndImag">
+        <div class="row">
+            <div class="col-sm-12">
+                <%--<div class="carousel-content center centered">--%>
+                    <%--<div style="full-width-background background-color:wet-asphalt">--%>
+                    <%--<h2 style="color:white">Because your BFF Loves your Pet like a Brother,</h2>--%>
+                    <%--<p style="color:white">Fur Sitters helps you schedule a Pet Sitting visit that makes everyone happy.</p>--%>
+                    <%--<br>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            </div>
+        </div>
+    </div>
+</div><!--/.item-->
 
+<!-- FOOTER -->
+<section id="bottom" class="wet-asphalt">
+    <div class="container">
+        <div>
+            <div class="col-md-3 col-sm-6">
+                <h4>About Us</h4>
+                <p>This web app meets Final Project requirements for the Grand Circus Tech Java Intensive Bootcamp held
+                    <br/>
+                    April 10 through June 2, 2017.<br/>
+                    Requirements include:<br/>
+                    -Building a Web App in Java Development Language.<br/>
+                    -Using Spring MVC Framework with Hibernate Extension.<br/>
+                    -Using MySQL Database and JDBC Connectivity.<br/>
+                    -Incorporating an API.<br/>
+                    -Completing the working demo in two weeks.<br/>
+                </p>
+            </div><!--/.col-md-3-->
+
+            <%--<pre id="content"></pre>--%>
+
+            <div class="col-md-3 col-sm-6">
+                <h4>Company</h4>
+                <div>
+                    <ul class="arrow">
+                        <li><a href="#">Company Overview</a></li>
+                        <li><a href="#">Meet The Team</a></li>
+                        <li><a href="#">Our Awesome Partners</a></li>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Frequently Asked Questions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Copyright</a></li>
+                    </ul>
+                </div>
+            </div><!--/.col-md-3-->
+
+
+            <div class="col-md-3 col-sm-6">
+                <h4>Latest News</h4>
+                <div>
+                    <div class="media">
+                        <div class="pull-left">
+                            <img src="resources/images/blog/thumb1.jpg" alt="">
+                        </div>
+                        <div class="media-body">
+                            <span class="media-heading">
+                                <a href="http://www.javaworld.com/article/3198370/application-development/amazon-web-services-sets-a-lure-for-java-programmers.html"
+                                   target="_blank">
+                                    Amazon Web Services sets a lure for Java programmers. <br>
+                                    James Gosling, the father of Java, is joining AWS</a></span>
+                            <small class="muted">Posted 23 May 2017</small>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="pull-left">
+                            <img src="resources/images/blog/thumb2.jpg" alt="">
+                        </div>
+                        <div class="media-body">
+                            <span class="media-heading"><a
+                                    href="http://www.javaworld.com/article/3197992/cloud-computing/how-google-s-cloud-is-ushering-in-a-new-era-of-sql-databases.html"
+                                    target="_blank">How Google’s cloud is ushering in a new era of SQL databases.<br>
+                                Google Spanner is a NewSQL database</a></span>
+                            <small class="muted">Posted 22 May 2017</small>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="pull-left">
+                            <img src="resources/images/blog/thumb3.jpg" alt="">
+                        </div>
+                        <div class="media-body">
+                            <span class="media-heading">
+                                <a href="https://careerfoundry.com/en/blog/web-development/8-web-development-trends-2017/"
+                                   target="_blank">
+                                    8 Web Development Trends To Look Out For In 2017.<br></a></span>
+                            <small class="muted">Posted 19 May 2017</small>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.col-md-3-->
+
+            <div class="col-md-3 col-sm-6">
+                <h4>Contact Developers:</h4>
+                <address>
+                    <strong>Trina Chowdhury</strong><br>
+                    <a href="https://www.linkedin.com/in/trinachowdhury/">LinkedIn.com/in/trinachowdhury</a> <br>
+                    <a href="mailto:trina.ch93@gmail.com">trina.ch93@gmail.com</a><br>
+                </address>
+
+                <address>
+                    <strong>Lydia Latocki</strong><br>
+                    <a href="https://www.linkedin.com/in/lydialatocki/">LinkedIn.com/in/lydialatocki</a> <br>
+                    <a href="mailto:lydia@lydialatocki.com">lydia@lydialatocki.com</a><br>
+                </address>
+
+                <address>
+                    <strong>Jeremy Villa</strong><br>
+                    <a href="https://www.linkedin.com/in/jvilla1991/">LinkedIn.com/in/jvilla1991</a> <br>
+                    <a href="mailto:villajeremy1991@gmail.com">villajeremy1991@gmail.com</a><br>
+                </address>
+
+            </div> <!--/.col-md-3-->
+        </div>
+    </div>
+</section><!--/#bottom-->
+
+
+<script>
+//Google Login script from API instructions
     // Client ID and API key from the Developer Console
     // credentials to sign into google
     var CLIENT_ID = '802805404885-h8ffds7tamadqlv1pqduuf4s7emn5c24.apps.googleusercontent.com';
