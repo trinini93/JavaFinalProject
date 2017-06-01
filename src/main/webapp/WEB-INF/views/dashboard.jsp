@@ -63,15 +63,17 @@
 
 <div class="container">
 
-<h2>Welcome to your Fur Sitter Dashboard!</h2>
+ <br>
 
 <h2>Your Fur Sitter Dashboard</h2>
 
-
 ${googleID}
-
-
-${something}
+    ${firstName}
+    ${lastName}
+    ${email}
+    ${address}
+${city}
+${state}
 
     <br>
     <br>

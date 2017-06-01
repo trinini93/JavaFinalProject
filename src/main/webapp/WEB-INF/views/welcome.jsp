@@ -53,11 +53,12 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="/">Home</a></li>
-                <!-- <li><a href="about-us.html">About Howl Hugs</a></li> -->
-                <form action="/getStatus" method="post">
-                <li class="hover"><input type="hidden" name="status" id="status"
-                    value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>
-                    <input type="submit" value = "Dashboard"></li>
+
+                <%--<form action="/getStatus" method="post" id="goToDashboard">--%>
+                <%--<li class="hover"><input type="hidden" name="status" id="status"--%>
+                    <%--value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>--%>
+                    <%----%>
+                    <%--<input type="submit" value = "Dashboard"></li>--%>
              <%--<input type="hidden" name="status" id="status"--%>
                        <%--value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>--%>
                 </form>
@@ -80,19 +81,22 @@
                                 <h2 class="animation animated-item-1" style="color:#3c5899">Welcome to Fur Sitters!<br>
                                     Connecting Local Companions<br>
                                     for your pets while you are away.</h2>
-                                <h3 class="animation animated-item-2" style="color:#3c5899"><br>Click <strong><a href="#createA" style="color:#3c5899">Register</a></strong> to sign up with Fur Sitters!</h3><br>
-                                <!-- this is the google login/authorization button to!-->
+                                <h3 class="animation animated-item-2" style="color:#3c5899"><br>Click <strong><a href="#createA" style="color:#3c5899">Register</a></strong> to sign up with Fur Sitters!</h3>
+                                <br>
+
+                            <!-- this is the google login/authorization button to!-->
                                 <h3 style="color:#3c5899">If you have a Fur Sitters account, <br>
                                     click <strong>'Authorize'</strong> to sign in with<br>
                                     your Google Account:</h3>
                                 <div class="col-xs-2">
                                     <%--this ID button talks to script of bottom of page from google/google API--%>
                                     <button id="authorize-button" style="display: none;" class="form-control">
-                                        Authorize
-                                    </button>
-                                    <button id="signout-button" style="display: none;" class="form-control">Sign Out
-                                    </button>
+                                        Authorize</button>
+                                    <button id="signout-button" style="display: none;" class="form-control" id="status2" action="getStatus">Sign Out</button>
                                     <%--<pre id="content"></pre>--%>
+
+                                    <button id="authorize-button" style="display: none;" class="form-control" >Authorize</button>
+                                    <button id="signout-button" style="display: none;" class="form-control">Sign Out</button>
 
                                 </div>
                                 <br>
@@ -388,6 +392,7 @@
             console.log(gapi.auth2.getAuthInstance().currentUser.get().getId());
             document.getElementById('status').value = gapi.auth2.getAuthInstance().currentUser.get().getId();
             document.getElementById('status2').value = gapi.auth2.getAuthInstance().currentUser.get().getId();
+//            document.getElementById("goToDashboard").submit();
         } else {
             authorizeButton.style.display = 'block';
             signoutButton.style.display = 'none';
@@ -457,6 +462,7 @@
 </script>
 
 <%--this script is calling out google api--%>
+
 <script async defer src="https://apis.google.com/js/api.js"
         onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
