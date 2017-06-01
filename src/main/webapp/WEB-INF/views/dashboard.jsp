@@ -61,8 +61,7 @@
 </header><!--/header-->
 
 <div class="container">
-<h2>Your Fur Sitter Dashboard</h2>
-<h2>Welcome!</h2>
+<h2>Welcome to your Fur Sitter Dashboard!</h2>
 
 ${googleID}
 
