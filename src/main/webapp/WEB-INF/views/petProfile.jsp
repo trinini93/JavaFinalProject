@@ -140,7 +140,7 @@
         var cuddle = document.getElementById("Cuddling").checked;
 
          if (!feed && !walk && !cuddle) {
-             alert("One value must be checked!")
+             alert("At least one value must be checked!")
              return false;
          }
     }

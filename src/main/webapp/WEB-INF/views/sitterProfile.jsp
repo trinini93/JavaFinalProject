@@ -71,15 +71,15 @@
 </section><!--/#title-->
 
 <div class="form-group center_div">
-    <form action="/sitterProfileSuccess" method="post">
+    <form action="/sitterProfileSuccess" method="post" onsubmit="return validateCheckbox()">
         <h3 class="form-heading">Please fill out the form below to register yourself as a Fur Sitter.</h3>
 
     <%--Step 1: Type of animal willing to sit(checkbox)--%>
     1) I am willing to watch:<br>
-    <input type="checkbox" name="petSize" value="Small dogs">Small dogs<br>
-    <input type="checkbox" name="petSize" value="Medium-sized dogs">Medium-sized dogs<br>
-    <input type="checkbox" name="petSize" value="Large dogs">Large dogs<br>
-    <input type="checkbox" name="petSize" value="Cats">Cats<br><br>
+    <input type="checkbox" name="petSize" id="size1" value="Small dogs">Small dogs<br>
+    <input type="checkbox" name="petSize" id="size2" value="Medium-sized dogs">Medium-sized dogs<br>
+    <input type="checkbox" name="petSize" id="size3"  value="Large dogs">Large dogs<br>
+    <input type="checkbox" name="petSize" id="size4" value="Cats">Cats<br><br>
 
     <%--Step 2: In/home sits? (will sitter take pet into their home?) (checkbox)--%>
     2) I am willing to watch your pet<br>
@@ -88,21 +88,21 @@
 
     <%--Step 3: animal temperament willing to watch (checkbox)//CHANGE TO RADIO BUTTON--%>
     3) I can watch:<br>
-    <input type="checkbox" name="temper" value="easy going pets">easy going pets<br>
-    <input type="checkbox" name="temper" value="high-maintenance pets">high-maintenance pets<br>
-    <input type="checkbox" name="temper" value="Both">Both<br><br>
+    <input type="checkbox" name="temper" id="temp1" value="easy going pets">easy going pets<br>
+    <input type="checkbox" name="temper" id="temp2" value="high-maintenance pets">high-maintenance pets<br>
+    <input type="checkbox" name="temper" id="temp3" value="Both">Both<br><br>
 
     <%--Step 4: Willing to feed/walk/play wild/meds etc (checkbox)--%>
     4) I am willing do the following:<br>
-    <input type="checkbox" name="activities" value="Feeding">Feeding<br>
-    <input type="checkbox" name="activities" value="Walking">Walking<br>
-    <input type="checkbox" name="activities" value="Cuddling!">Cuddling!<br><br>
+    <input type="checkbox" name="activities" id="act1" value="Feeding">Feeding<br>
+    <input type="checkbox" name="activities" id="act2" value="Walking">Walking<br>
+    <input type="checkbox" name="activities" id="act3" value="Cuddling!">Cuddling!<br><br>
 
     <%--Step 5: Distance willing to travel (checkbox)--%>
     5) I am willing to travel:<br>
-    <input type="checkbox" name="trav" value="0-5 miles">0-5 miles<br>
-    <input type="checkbox" name="trav" value="6-10 miles">6-10 miles<br>
-    <input type="checkbox" name="trav" value="I am not willing to travel.">I am not willing to travel.<br><br>
+    <input type="checkbox" name="trav" id="trav1" value="0-5 miles">0-5 miles<br>
+    <input type="checkbox" name="trav" id="trav2" value="6-10 miles">6-10 miles<br>
+    <input type="checkbox" name="trav" id="trav3" value="I am not willing to travel.">I am not willing to travel.<br><br>
 
     <%--Step 6: Experience with sits 0-2, 3-5, 5-10, 10+ (radio)--%>
     6) I have watched pets ____ times:<br>
@@ -114,5 +114,48 @@
     <input type="submit">
 </form>
 </div>
+
+<script>
+    function validateCheckbox() {
+        var size1 = document.getElementById("size1").checked;
+        var size2 = document.getElementById("size2").checked;
+        var size3 = document.getElementById("size3").checked;
+        var size4 = document.getElementById("size4").checked;
+
+        if (!size1 && !size2 && !size3 && !size4) {
+            alert("At least one value for pet size must be checked!")
+            return false;
+        }
+        var temp1 = document.getElementById("temp1").checked;
+        var temp2 = document.getElementById("temp2").checked;
+        var temp3 = document.getElementById("temp3").checked;
+
+        if (!temp1 && !temp2 && !temp3) {
+            alert("At least one value for pet temper must be checked!")
+            return false;
+        }
+
+        var act1 = document.getElementById("act1").checked;
+        var act2 = document.getElementById("act2").checked;
+        var act3 = document.getElementById("act3").checked;
+
+        if (!act1 && !act2 && !act3) {
+            alert("At least one value for pet activities must be checked!")
+            return false;
+        }
+        var trav1 = document.getElementById("trav1").checked;
+        var trav2 = document.getElementById("trav2").checked;
+        var trav3 = document.getElementById("trav3").checked;
+
+        if (!trav1 && !trav2 && !trav3) {
+            alert("At least one value for travel preferences must be checked!")
+            return false;
+        }
+
+
+
+    }
+
+</script>
 </body>
 </html>

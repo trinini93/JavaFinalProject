@@ -129,7 +129,7 @@
                 <table>
                     <div class="col-xs-6">
                         <tr>
-                            <td>Email: <input type="text" name="email" required class="form-control"></td>
+                            <td>Email(must be a Gmail account): <input type="text" name="email" required class="form-control"></td>
                         </tr>
                         <tr>
                             <td>First Name: <input type="text" name="firstName" required class="form-control"></td>
