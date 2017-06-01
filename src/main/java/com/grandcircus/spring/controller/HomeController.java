@@ -15,6 +15,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 
+import org.hibernate.criterion.Restrictions;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -393,8 +394,10 @@ public class HomeController {
         }
         String info = firstName + " " + lastName;
         return new ModelAndView("finishAccount", "addUser", info);
+        //view finishAccount prompts user to finish Pet or Sitter profiles
     }
 
+    //from the Tables that Sitters created their profile (not the connected network)
     public ArrayList<SittersEntity> getSitterEntity() {
         // this defines the configuration and mapping resources
         Configuration configurationObject = new Configuration().configure("hibernate.cfg.xml");
@@ -408,21 +411,32 @@ public class HomeController {
         Criteria c = selectSitters.createCriteria(SittersEntity.class); //pulling the entire list of customers from the database
 
         // create an entire arraylist to capture complete database instead of only one item
-        // also the POJO/casting the 'list' to the arrayList of the type CustomerEntity. CustomerEntity is the Object.
+        // also the POJO/casting the 'list' to the arrayList of the type SittersEntity. SittersEntity is the Object.
         return (ArrayList<SittersEntity>) c.list();
     }
 
-    @RequestMapping("/addASitter")
+    @RequestMapping("/showSitterNetwork")
+    public ModelAndView showSitterNetwork (
+                                    @RequestParam("status") String status,
+                                    Model model) {
+
+        ArrayList<AddSitterEntity> sitterEmails = getSitterEmails(status);
+
+        return new ModelAndView("dashboard", "sittersList", sitterEmails);
+    }
+
+
+        @RequestMapping("/addASitter")
     public ModelAndView addASitter (@RequestParam("sName") String sName,
                                     @RequestParam("sEmail") String sEmail,
-                                    @RequestParam("status") String status) {
+                                    @RequestParam("status") String status,
+                                    Model model) {
 
         AddSitterEntity sitters = new AddSitterEntity();
 
         sitters.setSitterName(sName);
         sitters.setSitterEmail(sEmail);
         sitters.setGoogIdParent(status);
-
 
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 
@@ -439,7 +453,34 @@ public class HomeController {
             session.close();
         }
 
+        ArrayList<AddSitterEntity> sitterEmails = getSitterEmails(status);
+        model.addAttribute("sittersList", sitterEmails);
+
         return new ModelAndView("dashboard", "sitterAdded", sitters);
+    }
+
+    private ArrayList<AddSitterEntity> getSitterEmails(String status) {
+        //we must first create a session so that we can interact with the database
+        Configuration configurationObject = new Configuration().configure("hibernate.cfg.xml");
+
+        SessionFactory sessionFactory = configurationObject.buildSessionFactory();
+
+        Session friendSession = sessionFactory.openSession();
+
+        // opening a transaction
+        Transaction myNetwork = friendSession.beginTransaction();
+
+        //create a criteria for the entity type you'll be searching through
+        Criteria myNetwkFriends = friendSession.createCriteria(AddSitterEntity.class);//.setProjection(Projections.projectionList().add( Projections.distinct(Projections.property("sitterEmail"))));
+
+        //List list = friendSession.createCriteria(AddSitterEntity.class).add(Restrictions.eq("googIdParent", googIdParent)).setProjection(Projections.projectionList().add(Projections.distinct(Projections.property("sitterEmail")))).list();
+        myNetwkFriends.add(Restrictions.eq("googIdParent", status));
+
+        ArrayList<AddSitterEntity> list = (ArrayList<AddSitterEntity>) myNetwkFriends.list(); // get the list
+        friendSession.getTransaction().commit(); // telling transaction to go
+
+        return list;
+
 
     }
 
