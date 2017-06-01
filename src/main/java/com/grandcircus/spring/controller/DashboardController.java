@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,9 +43,20 @@ public class DashboardController {
         UserProfileEntity result = (UserProfileEntity) u.uniqueResult();
 
 
-        model.addAttribute("something", result.getFirstName());
+        model.addAttribute("firstName", result.getFirstName());
+        model.addAttribute("lastName", result.getLastName());
+        model.addAttribute("email", result.getEmail());
+        model.addAttribute("address", result.getAddress());
+        model.addAttribute("city", result.getCity());
+        model.addAttribute("state", result.getState());
+
 
         return "dashboard";
+    }
+
+    @RequestMapping("/dashboard")
+    public ModelAndView dashboard() {
+        return new ModelAndView("dashboard", "hello", "Hello, World!");
     }
 
 //    @RequestMapping("/dashboard")

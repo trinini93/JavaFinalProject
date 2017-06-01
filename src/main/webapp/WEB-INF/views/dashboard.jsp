@@ -69,9 +69,12 @@
 
 
 ${googleID}
-
-
-${something}
+    ${firstName}
+    ${lastName}
+    ${email}
+    ${address}
+${city}
+${state}
 
     <br>
     <br>

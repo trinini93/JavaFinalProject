@@ -88,10 +88,8 @@
                                 <div class="col-xs-2">
                                     <%--this ID button talks to script of bottom of page from google/google API--%>
                                     <button id="authorize-button" style="display: none;" class="form-control">
-                                        Authorize
-                                    </button>
-                                    <button id="signout-button" style="display: none;" class="form-control">Sign Out
-                                    </button>
+                                        Authorize</button>
+                                    <button id="signout-button" style="display: none;" class="form-control" id="status2" action="getStatus">Sign Out</button>
                                     <%--<pre id="content"></pre>--%>
 
                                 </div>
