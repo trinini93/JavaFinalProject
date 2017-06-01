@@ -54,10 +54,10 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="/">Home</a></li>
                 <!-- <li><a href="about-us.html">About Howl Hugs</a></li> -->
-                <form action="/getStatus" method="post">
-                <li class="hover"><input type="hidden" name="status" id="status"
-                    value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>
-                    <input type="submit" value = "Dashboard"></li>
+                <%--<form action="/getStatus" method="post">--%>
+                <%--<li class="hover"><input type="hidden" name="status" id="status"--%>
+                    <%--value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>--%>
+                    <%--<input type="submit" value = "Dashboard"></li>--%>
              <%--<input type="hidden" name="status" id="status"--%>
                        <%--value="gapi.auth2.getAuthInstance().currentUser.get().getId()"/>--%>
                 </form>
