@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Complete a Howl Hug Member Profile for your Pet</title>
+    <title>Please fill out your pet information here!</title>
 
 
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet" >
@@ -81,9 +81,7 @@
 <div class="form-group center_div">
     <div class="col-sm-6">
     <form action="/dogBreedList">
-        <h2 class="form-heading">Please fill out the form below to register your pet with Fur Sitters.</h2>
-
-<!-- <form action="/dogBreedList"> -->
+        <h3 class="form-heading">Please fill out the form below to register your pet with Fur Sitters.</h3>
 
 <%--Step 1: Pet type dog/cat (radio button)--%>
     I have a:<br>
@@ -116,7 +114,6 @@
     My pet:<br>
     <input type="radio" name="medType" value="yes" checked> WILL need medication<br>
     <input type="radio" name="medType" value="no"> Will NOT need medication<br>
-
 
 <%--Step 5: In home sits (can sitter come to parent's house? y/n (radio button)--%>
     I prefer to:<br>

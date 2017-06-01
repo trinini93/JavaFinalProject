@@ -62,8 +62,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <h2>Pet Sitting is so much fun!</h2>
-                <p>Please fill out the form below to register as a Sitters.</p>
+                <h2>Welcome to Fur Sitters!</h2>
+
             </div>
 
         </div>
@@ -72,7 +72,7 @@
 
 <div class="form-group center_div">
     <form action="/sitterProfileSuccess" method="post">
-        <h2 class="form-heading">Please fill out form completely.</h2>
+        <h3 class="form-heading">Please fill out the form below to register yourself as a Fur Sitter.</h3>
 
     <%--Step 1: Type of animal willing to sit(checkbox)--%>
     1) I am willing to watch:<br>
