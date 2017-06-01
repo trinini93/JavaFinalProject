@@ -53,8 +53,9 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hover"><a href="/">Home</a></li>
-                <!-- <li><a href="about-us.html">About Howl Hugs</a></li> -->
                 <li class="active"><a href="/dashboard">Dashboard</a></li>
+                <li class="hover"><a href="/petProfile">Pet Profile</a></li>
+                <li class="hover"><a href="/sitterProfile">Sitter Profile</a></li>
             </ul>
         </div>
     </div>

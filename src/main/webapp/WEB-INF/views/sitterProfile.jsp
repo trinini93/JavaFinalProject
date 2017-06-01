@@ -51,8 +51,8 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hover"><a href="/">Home</a></li>
-                <!-- <li><a href="about-us.html">About Howl Hugs</a></li> -->
-                <li class="hover"><a href="/dashboard">Dashboard</a></li>
+                <%--<li class="hover"><a href="/dashboard">Dashboard</a></li>--%>
+                <li class="hover"><a href="/petProfile">Pet Profile</a></li>
             </ul>
         </div>
     </div>
@@ -79,36 +79,36 @@
     <input type="checkbox" name="petSize" value="Small dogs">Small dogs<br>
     <input type="checkbox" name="petSize" value="Medium-sized dogs">Medium-sized dogs<br>
     <input type="checkbox" name="petSize" value="Large dogs">Large dogs<br>
-    <input type="checkbox" name="petSize" value="Cats">Cats<br>
+    <input type="checkbox" name="petSize" value="Cats">Cats<br><br>
 
     <%--Step 2: In/home sits? (will sitter take pet into their home?) (checkbox)--%>
     2) I am willing to watch your pet<br>
     at my home only:<br><input type="radio" name="myHome" value="1" checked>Yes<input type="radio" name="myHome" value="0">No</td><br>
-    at your home only:<br><input type="radio" name="yourHome" value="1" checked>Yes<input type="radio" name="yourHome" value="0">No</td><br>
+    at your home only:<br><input type="radio" name="yourHome" value="1" checked>Yes<input type="radio" name="yourHome" value="0">No</td><br><br>
 
     <%--Step 3: animal temperament willing to watch (checkbox)//CHANGE TO RADIO BUTTON--%>
     3) I can watch:<br>
     <input type="checkbox" name="temper" value="easy going pets">easy going pets<br>
     <input type="checkbox" name="temper" value="high-maintenance pets">high-maintenance pets<br>
-    <input type="checkbox" name="temper" value="Both">Both<br>
+    <input type="checkbox" name="temper" value="Both">Both<br><br>
 
     <%--Step 4: Willing to feed/walk/play wild/meds etc (checkbox)--%>
     4) I am willing do the following:<br>
     <input type="checkbox" name="activities" value="Feeding">Feeding<br>
     <input type="checkbox" name="activities" value="Walking">Walking<br>
-    <input type="checkbox" name="activities" value="Cuddling!">Cuddling!<br>
+    <input type="checkbox" name="activities" value="Cuddling!">Cuddling!<br><br>
 
     <%--Step 5: Distance willing to travel (checkbox)--%>
     5) I am willing to travel:<br>
     <input type="checkbox" name="trav" value="0-5 miles">0-5 miles<br>
     <input type="checkbox" name="trav" value="6-10 miles">6-10 miles<br>
-    <input type="checkbox" name="trav" value="I am not willing to travel.">I am not willing to travel.<br>
+    <input type="checkbox" name="trav" value="I am not willing to travel.">I am not willing to travel.<br><br>
 
     <%--Step 6: Experience with sits 0-2, 3-5, 5-10, 10+ (radio)--%>
     6) I have watched pets ____ times:<br>
     <input type="radio" name="experience" value="0-5">0-5<br>
     <input type="radio" name="experience" value="6-10">6-10<br>
-    <input type="radio" name="experience" value="10+">10+<br>
+    <input type="radio" name="experience" value="10+">10+<br><br>
 
 
     <input type="submit">
