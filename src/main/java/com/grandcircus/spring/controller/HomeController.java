@@ -96,16 +96,13 @@ public class HomeController {
             System.out.println("MD5: " + sig);
 
             if (animalType.equals("dog")) {
-// this will happen if a user chooses a dog
+                // this will happen if a user chooses a dog
                 HttpGet getPage = new HttpGet("/breed.list?format=json&key=21b3ceec4e3de3f6f2a332b7f399a721&animal=dog");
 
                 //this is going to execute the HTTP request, and pull back the HTTP response for us.
                 resp = browser.execute(host, getPage);
 
-                //result = "";
                 jsonString = EntityUtils.toString(resp.getEntity());
-
-                //System.out.println(jsonString);
 
                 //creating json object
                 JSONObject json = new JSONObject(jsonString);
@@ -115,10 +112,10 @@ public class HomeController {
                 //looping through our array list
                 for (int i = 0; i < dogBreedArray.length(); i++) {
                     breeds.add(dogBreedArray.getJSONObject(i).get("$t").toString());
-                    //result += dogBreedArray.getJSONObject(i).get("$t") + "<br>";
 
                 }
 
+                //literally adding data from database to jsp. model.addAttribute
                 model.addAttribute("breeds", breeds);
             } else {
 
@@ -130,8 +127,6 @@ public class HomeController {
                 //result = "";
                 jsonString = EntityUtils.toString(resp.getEntity());
 
-                //System.out.println(jsonString2);
-
                 //creating json object
                 JSONObject json2 = new JSONObject(jsonString);
 
@@ -139,8 +134,6 @@ public class HomeController {
 
                 for (int i = 0; i < catBreedArray.length(); i++) {
                     breeds.add(catBreedArray.getJSONObject(i).get("$t").toString());
-                    //result += catBreedArray.getJSONObject(i).get("$t") ;
-
 
                 }
                 model.addAttribute("breeds", breeds);
@@ -333,6 +326,7 @@ public class HomeController {
 
 
     @RequestMapping(value = "/finishAccount", method = RequestMethod.GET)
+    //requestparam fields in form
     public ModelAndView addCreateAccount(@RequestParam("email") String email,
                                          @RequestParam("firstName") String firstName,
                                          @RequestParam("lastName") String lastName,
@@ -375,21 +369,31 @@ public class HomeController {
 //        model.addAttribute("parent", user.getParent());
 //        model.addAttribute("sitter", user.getSitter());
 //        System.out.print(user.getFirstName());
+
+        //has all the info needed to make db connection, and info about mapping.
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 
+        //.openSession creates connection to DB
         Session session = factory.openSession();
+
+        //startinng transaction for db connection, any failure it'll roll back. Making sure everything is consistent.
         Transaction tx = null;
         Integer UserID = null;
         try {
+            //beginning session transaction
             tx = session.beginTransaction();
-            //THIS IS WHERE WE ARE SAVING TO DB. USER IS OBJECT CREATED ABOVE. THIS IS SAVING IT
+
+            //Where we are saving to DB. User is OBJECT created by programmer.
             session.save(user);
-            //.COMMIT MAKING SURE THAT IT ACTUALLY GOES THRU TRANSACTION AND SAVES IT
+
+            //this makes sure it actually goes through transaction and saves it.
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) tx.rollback();
             e.printStackTrace();
         } finally {
+
+            //closing out session
             session.close();
         }
         String info = firstName + " " + lastName;

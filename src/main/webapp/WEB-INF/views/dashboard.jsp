@@ -91,7 +91,7 @@ ${state}
     <p>Click below to add a sitter to your Network.</p>
     <form action="addASitter" method="post">
         Sitter name: <input type="text" name="sName"><br>
-        Sitter email: <input type="text" name="sEmail"><br>
+        Sitter email(must be a Gmail account): <input type="text" name="sEmail"><br>
         <input type="hidden" name="status" id="status"><br>
         <input type="submit" value="Submit">
     </form> <br>

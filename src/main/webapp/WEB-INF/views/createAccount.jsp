@@ -84,11 +84,11 @@
 
         <%--This is where we talk to db. Grabbing user info and sending it to DB with this form--%>
         <form name="userInfo" method="GET" action="/finishAccount" onsubmit="return validateForm();">
-            <h2>Fill out form completely to join the <br>Howl Hugs Pet Sitter Web App</h2>
+            <h2>Fill out form completely to join the <br>Fur Sitters Web App</h2>
             <table>
                 <div class="col-xs-6">
                     <tr>
-                        <td>Email: <input type="text" name="email" required class="form-control"></td>
+                        <td>Email(must be a Gmail account): <input type="text" name="email" required class="form-control"></td>
                     </tr>
                     <tr>
                         <td>First Name: <input type="text" name="firstName" required class="form-control"></td>
@@ -115,7 +115,7 @@
                         <td>Password: <input type="password" name="password" required class="form-control"></td>
                     </tr>
                     <tr>
-                        <td>Repeat Password: <input type="password" name="repeatPassword" required class="form-control"></td>
+                        <td>Confirm Password: <input type="password" name="repeatPassword" required class="form-control"></td>
                     </tr><br><br>
                     <tr>
                         <td>Are you a Parent: <input type="radio" name="parent" value="1" checked>Yes    <input type="radio" name="parent" value="0">No</td>

@@ -390,7 +390,7 @@
             authorizeButton.style.display = 'none';
             signoutButton.style.display = 'block';
             console.log(gapi.auth2.getAuthInstance().currentUser.get().getId());
-            document.getElementById('status').value = gapi.auth2.getAuthInstance().currentUser.get().getId();
+            //document.getElementById('status').value = gapi.auth2.getAuthInstance().currentUser.get().getId();
             document.getElementById('status2').value = gapi.auth2.getAuthInstance().currentUser.get().getId();
 //            document.getElementById("goToDashboard").submit();
         } else {
