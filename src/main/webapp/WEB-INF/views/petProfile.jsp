@@ -112,6 +112,7 @@
 
 <%--Step 4: Pet's med's y/n (radio button) IF/ELSE STATEMENT NEEDED--%>
     My pet:<br>
+
     <input type="radio" name="medType" value="yes" checked> WILL need medication<br>
     <input type="radio" name="medType" value="no"> Will NOT need medication<br>
 
