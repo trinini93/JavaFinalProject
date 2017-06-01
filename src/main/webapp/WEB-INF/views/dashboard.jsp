@@ -62,26 +62,22 @@
 
 <div class="container">
 <h2>Your Fur Sitter Dashboard</h2>
-<h2>Welcome!</h2>
 
 ${googleID}
 
-as
 
 ${something}
+
+    <br>
+    <br>
+    <br>
+    <button type="button" class="btn btn-default btn-lg"><a id="showSitters" href="addASitter">Show your Sitter Network</a></button>
+    <br>
+<p>Then, select an email from your Network of Sitters to request an appointment for sitting.</p> <br>
+<c:forEach items="${sittersList}" var ="sEmail">
+    <a href="mailto:${sEmail.sitterEmail}?subject=Hello,%20Can%20you%20sit%3F&body=Hello,%0D%0DCan%20you%20sit%20for%20my%20pet%20on:">${sEmail.sitterName}:  ${sEmail.sitterEmail}</a><br>
+</c:forEach>
 <br>
-<p>Select an email from your Network of Sitters to request an appointment for sitting.</p><br>
-<%--<c:forEach items="${sitterEmail}" var ="sEmail"> <br>--%>
-
-    <%--<p>If you would like to add a Sitter to your network, please fill out the form below.</p>--%>
-
-
-    <%--<a href="mailto:${sEmail.sitterEmail}?subject=Hello,%20Can%20you%20sit%3F&body=Hello,%0D%0DCan%20you%20sit%20for%20my%20pet%20on:">${sEmail.sitterEmail}</a><br>--%>
-<%--</c:forEach>--%>
-
-    ${sitterAdded.sitterName}
-    ${sitterAdded.sitterEmail}
-
 <br>
 <br>
 
@@ -93,6 +89,11 @@ ${something}
         <input type="submit" value="Submit">
     </form> <br>
 
+    <p>Successfuly Added:</p>
+    ${sitterAdded.sitterName}  ${sitterAdded.sitterEmail}
+
+    <br>
+</div>
 <%--this form will add a sitter to parent network.--%>
 <script>
 
@@ -144,6 +145,7 @@ ${something}
 //            authorizeButton.style.display = 'none';
 //            signoutButton.style.display = 'block';
             console.log(gapi.auth2.getAuthInstance().currentUser.get().getId());
+            document.getElementById("showSitters").href="showSitterNetwork?status=" + gapi.auth2.getAuthInstance().currentUser.get().getId();
             document.getElementById('status').value = gapi.auth2.getAuthInstance().currentUser.get().getId();
         } else {
 //            authorizeButton.style.display = 'block';
@@ -167,11 +169,10 @@ ${something}
 
 
 </script>
-
-<iframe src="
-https://calendar.google.com/calendar/embed?src=ci0im9019ojt8m3dmkmlbc68qo@group.calendar.google.com" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-
-</div>
+<%--<div><!-- Google Pet Sitter Calendar -->--%>
+<%--<iframe src="--%>
+<%--https://calendar.google.com/calendar/embed?src=ci0im9019ojt8m3dmkmlbc68qo@group.calendar.google.com" width="800" height="600" frameborder="0" scrolling="no"></iframe>--%>
+<%--</div>--%>
 
 <script async defer src="https://apis.google.com/js/api.js"
         onload="this.onload=function(){};handleClientLoad()"
